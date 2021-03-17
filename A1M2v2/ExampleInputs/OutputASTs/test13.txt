@@ -1,0 +1,51 @@
+@@FUN: foo
+@@BODY:
+0:    {
+1:      IF
+2:          >(
+3:            id(name=z, scope=L);
+3:            intcon(0);
+2:          )
+1:        then:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=G);
+2:            Rhs:
+3:              intcon(1);
+1:        else:
+2:          -null-
+1:      ENDIF
+1:      IF
+2:          ==(
+3:            id(name=z, scope=L);
+3:            intcon(0);
+2:          )
+1:        then:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=y, scope=G);
+2:            Rhs:
+3:              intcon(1);
+1:        else:
+2:          -null-
+1:      ENDIF
+1:      IF
+2:          !(
+3:            >(
+4:              id(name=x, scope=G);
+4:              id(name=y, scope=G);
+3:            )
+2:          )
+1:        then:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=z, scope=L);
+2:            Rhs:
+3:              intcon(0);
+1:        else:
+2:          -null-
+1:      ENDIF
+1:      RETURN:
+2:        id(name=z, scope=L);
+0:    }
+-----

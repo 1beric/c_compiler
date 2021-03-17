@@ -1,0 +1,367 @@
+==19565== Memcheck, a memory error detector
+==19565== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==19565== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==19565== Command: ./compile -DDEBUG
+==19565== Parent PID: 19554
+==19565== 
+--19565-- 
+--19565-- Valgrind options:
+--19565--    --leak-check=full
+--19565--    --show-leak-kinds=all
+--19565--    --track-origins=yes
+--19565--    --verbose
+--19565--    --log-file=ExampleInputs/OutputValgrind/val_out2.txt
+--19565-- Contents of /proc/version:
+--19565--   Linux version 3.13.0-170-generic (buildd@lcy01-amd64-001) (gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.4) ) #220-Ubuntu SMP Thu May 9 12:40:49 UTC 2019
+--19565-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-rdtscp-sse3
+--19565-- Page sizes: currently 4096, max supported 4096
+--19565-- Valgrind library directory: /usr/lib/valgrind
+--19565-- Reading syms from /p4/hb/berickson/private/csc553/A1M2v2/compile
+--19565-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
+--19565--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
+--19565--   .. CRC mismatch (computed aedc220e wanted 13895c11)
+--19565--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
+--19565--   .. CRC is valid
+--19565-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--19565--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--19565--   .. CRC mismatch (computed fed8e6c5 wanted e6be554a)
+--19565--    object doesn't have a symbol table
+--19565--    object doesn't have a dynamic symbol table
+--19565-- Scheduler: using generic scheduler lock implementation.
+--19565-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==19565== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-19565-by-berickson-on-???
+==19565== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-19565-by-berickson-on-???
+==19565== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-19565-by-berickson-on-???
+==19565== 
+==19565== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==19565== don't want to do, unless you know exactly what you're doing,
+==19565== or are doing some strange experiment):
+==19565==   /usr/lib/valgrind/../../bin/vgdb --pid=19565 ...command...
+==19565== 
+==19565== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==19565==   /path/to/gdb ./compile
+==19565== and then give GDB the following command
+==19565==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=19565
+==19565== --pid is optional if only one valgrind process is running
+==19565== 
+--19565-- REDIR: 0x4019d70 (ld-linux-x86-64.so.2:strlen) redirected to 0x380764b1 (???)
+--19565-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--19565--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--19565--   .. CRC mismatch (computed 4bcdfe99 wanted 3143e841)
+--19565--    object doesn't have a symbol table
+--19565-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--19565--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--19565--   .. CRC mismatch (computed 3df18bf1 wanted 14fefe1c)
+--19565--    object doesn't have a symbol table
+==19565== WARNING: new redirection conflicts with existing -- ignoring it
+--19565--     old: 0x04019d70 (strlen              ) R-> (0000.0) 0x380764b1 ???
+--19565--     new: 0x04019d70 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
+--19565-- REDIR: 0x4019b20 (ld-linux-x86-64.so.2:index) redirected to 0x4c2dd50 (index)
+--19565-- REDIR: 0x4019d40 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c2f2f0 (strcmp)
+--19565-- REDIR: 0x401aa90 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c31da0 (mempcpy)
+--19565-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
+--19565--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
+--19565--   .. CRC mismatch (computed 8932cdd8 wanted 3aceb420)
+--19565--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
+--19565--   .. CRC is valid
+--19565-- REDIR: 0x4ec4070 (libc.so.6:strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--19565-- REDIR: 0x4ec6360 (libc.so.6:strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--19565-- REDIR: 0x4ec3840 (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--19565-- REDIR: 0x4ec1ad0 (libc.so.6:rindex) redirected to 0x4c2da30 (rindex)
+--19565-- REDIR: 0x4eb9a80 (libc.so.6:malloc) redirected to 0x4c2ab10 (malloc)
+--19565-- REDIR: 0x4ec38d0 (libc.so.6:memset) redirected to 0x4c31350 (memset)
+--19565-- REDIR: 0x4ebe380 (libc.so.6:strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--19565-- REDIR: 0x4ed1780 (libc.so.6:__strcmp_sse2_unaligned) redirected to 0x4c2f1b0 (strcmp)
+--19565-- REDIR: 0x4ebfdd0 (libc.so.6:strlen) redirected to 0x4c2e0e0 (strlen)
+--19565-- REDIR: 0x4ec8a90 (libc.so.6:__GI_memcpy) redirected to 0x4c2fc90 (__GI_memcpy)
+--19565-- REDIR: 0x4eba550 (libc.so.6:calloc) redirected to 0x4c2cbf0 (calloc)
+--19565-- REDIR: 0x4ecadd0 (libc.so.6:strchrnul) redirected to 0x4c319b0 (strchrnul)
+--19565-- REDIR: 0x4eba120 (libc.so.6:free) redirected to 0x4c2bd80 (free)
+==19565== 
+==19565== HEAP SUMMARY:
+==19565==     in use at exit: 18,811 bytes in 55 blocks
+==19565==   total heap usage: 55 allocs, 0 frees, 18,811 bytes allocated
+==19565== 
+==19565== Searching for pointers to 55 not-freed blocks
+==19565== Checked 210,176 bytes
+==19565== 
+==19565== 8 bytes in 1 blocks are still reachable in loss record 1 of 30
+==19565==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x403027: yyalloc (lex.yy.c:1961)
+==19565==    by 0x402B3E: yyensure_buffer_stack (lex.yy.c:1661)
+==19565==    by 0x4013C8: yylex (lex.yy.c:726)
+==19565==    by 0x4057E2: yyparse (y.tab.c:1346)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 18 bytes in 6 blocks are definitely lost in loss record 2 of 30
+==19565==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x4EBFB49: strdup (strdup.c:42)
+==19565==    by 0x4030D8: id_or_keywd (scanner.l:101)
+==19565==    by 0x4015DA: yylex (scanner.l:37)
+==19565==    by 0x4057E2: yyparse (y.tab.c:1346)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 23 bytes in 7 blocks are still reachable in loss record 3 of 30
+==19565==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x4EBFB49: strdup (strdup.c:42)
+==19565==    by 0x4030D8: id_or_keywd (scanner.l:101)
+==19565==    by 0x4015DA: yylex (scanner.l:37)
+==19565==    by 0x4057E2: yyparse (y.tab.c:1346)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 24 bytes in 1 blocks are definitely lost in loss record 4 of 30
+==19565==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x4053EB: zalloc (util.c:21)
+==19565==    by 0x40543D: NewListNode (util.c:39)
+==19565==    by 0x405B36: yyparse (parser.y:142)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 56 bytes in 1 blocks are still reachable in loss record 5 of 30
+==19565==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x4053EB: zalloc (util.c:21)
+==19565==    by 0x404C00: mkConstNode (syntax-tree.c:378)
+==19565==    by 0x4065E0: yyparse (parser.y:335)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 56 bytes in 1 blocks are still reachable in loss record 6 of 30
+==19565==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x4053EB: zalloc (util.c:21)
+==19565==    by 0x404E44: mkListNode (syntax-tree.c:489)
+==19565==    by 0x406E7B: yyparse (parser.y:515)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 56 bytes in 1 blocks are still reachable in loss record 7 of 30
+==19565==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x4053EB: zalloc (util.c:21)
+==19565==    by 0x404CB8: mkSymTabRefNode (syntax-tree.c:413)
+==19565==    by 0x406B71: yyparse (parser.y:445)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 56 bytes in 1 blocks are still reachable in loss record 8 of 30
+==19565==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x4053EB: zalloc (util.c:21)
+==19565==    by 0x404D9A: mkSTNode (syntax-tree.c:458)
+==19565==    by 0x4052F6: AppendReturn (syntax-tree.c:725)
+==19565==    by 0x4059A6: yyparse (parser.y:90)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 56 bytes in 1 blocks are still reachable in loss record 9 of 30
+==19565==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x4053EB: zalloc (util.c:21)
+==19565==    by 0x404E44: mkListNode (syntax-tree.c:489)
+==19565==    by 0x405303: AppendReturn (syntax-tree.c:725)
+==19565==    by 0x4059A6: yyparse (parser.y:90)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 64 bytes in 1 blocks are still reachable in loss record 10 of 30
+==19565==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x403027: yyalloc (lex.yy.c:1961)
+==19565==    by 0x4026D7: yy_create_buffer (lex.yy.c:1496)
+==19565==    by 0x4013F2: yylex (lex.yy.c:728)
+==19565==    by 0x4057E2: yyparse (y.tab.c:1346)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 64 bytes in 1 blocks are still reachable in loss record 11 of 30
+==19565==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x4053EB: zalloc (util.c:21)
+==19565==    by 0x403EDA: SymTabInsert (symbol-table.c:215)
+==19565==    by 0x404145: SymTabRecordFunInfo (symbol-table.c:299)
+==19565==    by 0x405A30: yyparse (parser.y:116)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 64 bytes in 1 blocks are still reachable in loss record 12 of 30
+==19565==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x4053EB: zalloc (util.c:21)
+==19565==    by 0x40421A: SymTabRecordFunInfo (symbol-table.c:331)
+==19565==    by 0x405A30: yyparse (parser.y:116)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 64 bytes in 1 blocks are still reachable in loss record 13 of 30
+==19565==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x4053EB: zalloc (util.c:21)
+==19565==    by 0x403EDA: SymTabInsert (symbol-table.c:215)
+==19565==    by 0x404145: SymTabRecordFunInfo (symbol-table.c:299)
+==19565==    by 0x405984: yyparse (parser.y:87)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 64 bytes in 1 blocks are still reachable in loss record 14 of 30
+==19565==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x40731D: newinstr (threeac-gen.c:37)
+==19565==    by 0x4073CC: newlabel (threeac-gen.c:49)
+==19565==    by 0x407442: gen3ac (threeac-gen.c:69)
+==19565==    by 0x409070: genCode (mips-gen.c:66)
+==19565==    by 0x4059CD: yyparse (parser.y:97)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 64 bytes in 1 blocks are still reachable in loss record 15 of 30
+==19565==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x40731D: newinstr (threeac-gen.c:37)
+==19565==    by 0x4074A2: gen3ac (threeac-gen.c:71)
+==19565==    by 0x409070: genCode (mips-gen.c:66)
+==19565==    by 0x4059CD: yyparse (parser.y:97)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 64 bytes in 1 blocks are still reachable in loss record 16 of 30
+==19565==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x407298: newtemp (threeac-gen.c:27)
+==19565==    by 0x407832: GEN_const (threeac-gen.c:224)
+==19565==    by 0x4076B3: GEN_expr (threeac-gen.c:149)
+==19565==    by 0x408343: GEN_assg (threeac-gen.c:455)
+==19565==    by 0x40823E: GEN_stmt (threeac-gen.c:415)
+==19565==    by 0x4075E7: GEN_node (threeac-gen.c:122)
+==19565==    by 0x40761B: GEN_node (threeac-gen.c:131)
+==19565==    by 0x4074B6: gen3ac (threeac-gen.c:72)
+==19565==    by 0x409070: genCode (mips-gen.c:66)
+==19565==    by 0x4059CD: yyparse (parser.y:97)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 64 bytes in 1 blocks are still reachable in loss record 17 of 30
+==19565==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x4053EB: zalloc (util.c:21)
+==19565==    by 0x403EDA: SymTabInsert (symbol-table.c:215)
+==19565==    by 0x4072D4: newtemp (threeac-gen.c:30)
+==19565==    by 0x407832: GEN_const (threeac-gen.c:224)
+==19565==    by 0x4076B3: GEN_expr (threeac-gen.c:149)
+==19565==    by 0x408343: GEN_assg (threeac-gen.c:455)
+==19565==    by 0x40823E: GEN_stmt (threeac-gen.c:415)
+==19565==    by 0x4075E7: GEN_node (threeac-gen.c:122)
+==19565==    by 0x40761B: GEN_node (threeac-gen.c:131)
+==19565==    by 0x4074B6: gen3ac (threeac-gen.c:72)
+==19565==    by 0x409070: genCode (mips-gen.c:66)
+==19565== 
+==19565== 64 bytes in 1 blocks are still reachable in loss record 18 of 30
+==19565==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x40731D: newinstr (threeac-gen.c:37)
+==19565==    by 0x407897: GEN_const (threeac-gen.c:225)
+==19565==    by 0x4076B3: GEN_expr (threeac-gen.c:149)
+==19565==    by 0x408343: GEN_assg (threeac-gen.c:455)
+==19565==    by 0x40823E: GEN_stmt (threeac-gen.c:415)
+==19565==    by 0x4075E7: GEN_node (threeac-gen.c:122)
+==19565==    by 0x40761B: GEN_node (threeac-gen.c:131)
+==19565==    by 0x4074B6: gen3ac (threeac-gen.c:72)
+==19565==    by 0x409070: genCode (mips-gen.c:66)
+==19565==    by 0x4059CD: yyparse (parser.y:97)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 64 bytes in 1 blocks are still reachable in loss record 19 of 30
+==19565==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x40731D: newinstr (threeac-gen.c:37)
+==19565==    by 0x407FE7: GEN_params (threeac-gen.c:369)
+==19565==    by 0x408093: GEN_funCall (threeac-gen.c:391)
+==19565==    by 0x40822D: GEN_stmt (threeac-gen.c:411)
+==19565==    by 0x4075E7: GEN_node (threeac-gen.c:122)
+==19565==    by 0x40761B: GEN_node (threeac-gen.c:131)
+==19565==    by 0x4074B6: gen3ac (threeac-gen.c:72)
+==19565==    by 0x409070: genCode (mips-gen.c:66)
+==19565==    by 0x4059CD: yyparse (parser.y:97)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 64 bytes in 1 blocks are still reachable in loss record 20 of 30
+==19565==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x40731D: newinstr (threeac-gen.c:37)
+==19565==    by 0x40813A: GEN_funCall (threeac-gen.c:399)
+==19565==    by 0x40822D: GEN_stmt (threeac-gen.c:411)
+==19565==    by 0x4075E7: GEN_node (threeac-gen.c:122)
+==19565==    by 0x40761B: GEN_node (threeac-gen.c:131)
+==19565==    by 0x4074B6: gen3ac (threeac-gen.c:72)
+==19565==    by 0x409070: genCode (mips-gen.c:66)
+==19565==    by 0x4059CD: yyparse (parser.y:97)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 64 bytes in 1 blocks are still reachable in loss record 21 of 30
+==19565==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x40731D: newinstr (threeac-gen.c:37)
+==19565==    by 0x408560: GEN_return (threeac-gen.c:475)
+==19565==    by 0x40824F: GEN_stmt (threeac-gen.c:419)
+==19565==    by 0x4075E7: GEN_node (threeac-gen.c:122)
+==19565==    by 0x40761B: GEN_node (threeac-gen.c:131)
+==19565==    by 0x4074B6: gen3ac (threeac-gen.c:72)
+==19565==    by 0x409070: genCode (mips-gen.c:66)
+==19565==    by 0x4059CD: yyparse (parser.y:97)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 64 bytes in 1 blocks are still reachable in loss record 22 of 30
+==19565==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x40731D: newinstr (threeac-gen.c:37)
+==19565==    by 0x4085A6: GEN_return (threeac-gen.c:476)
+==19565==    by 0x40824F: GEN_stmt (threeac-gen.c:419)
+==19565==    by 0x4075E7: GEN_node (threeac-gen.c:122)
+==19565==    by 0x40761B: GEN_node (threeac-gen.c:131)
+==19565==    by 0x4074B6: gen3ac (threeac-gen.c:72)
+==19565==    by 0x409070: genCode (mips-gen.c:66)
+==19565==    by 0x4059CD: yyparse (parser.y:97)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 64 bytes in 1 blocks are still reachable in loss record 23 of 30
+==19565==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x40731D: newinstr (threeac-gen.c:37)
+==19565==    by 0x407517: gen3ac (threeac-gen.c:74)
+==19565==    by 0x409070: genCode (mips-gen.c:66)
+==19565==    by 0x4059CD: yyparse (parser.y:97)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 64 bytes in 1 blocks are definitely lost in loss record 24 of 30
+==19565==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x4053EB: zalloc (util.c:21)
+==19565==    by 0x403EDA: SymTabInsert (symbol-table.c:215)
+==19565==    by 0x4041C4: SymTabRecordFunInfo (symbol-table.c:315)
+==19565==    by 0x405A30: yyparse (parser.y:116)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 168 bytes in 3 blocks are still reachable in loss record 25 of 30
+==19565==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x4053EB: zalloc (util.c:21)
+==19565==    by 0x404D25: mkExprNode (syntax-tree.c:433)
+==19565==    by 0x4062B5: yyparse (parser.y:307)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 192 bytes in 3 blocks are still reachable in loss record 26 of 30
+==19565==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x4053EB: zalloc (util.c:21)
+==19565==    by 0x403EDA: SymTabInsert (symbol-table.c:215)
+==19565==    by 0x405C43: yyparse (parser.y:174)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 192 bytes in 3 blocks are still reachable in loss record 27 of 30
+==19565==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x40731D: newinstr (threeac-gen.c:37)
+==19565==    by 0x4083F5: GEN_assg (threeac-gen.c:458)
+==19565==    by 0x40823E: GEN_stmt (threeac-gen.c:415)
+==19565==    by 0x4075E7: GEN_node (threeac-gen.c:122)
+==19565==    by 0x40761B: GEN_node (threeac-gen.c:131)
+==19565==    by 0x4074B6: gen3ac (threeac-gen.c:72)
+==19565==    by 0x409070: genCode (mips-gen.c:66)
+==19565==    by 0x4059CD: yyparse (parser.y:97)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 224 bytes in 4 blocks are still reachable in loss record 28 of 30
+==19565==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x4053EB: zalloc (util.c:21)
+==19565==    by 0x404E44: mkListNode (syntax-tree.c:489)
+==19565==    by 0x405D4F: yyparse (parser.y:198)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 336 bytes in 6 blocks are still reachable in loss record 29 of 30
+==19565==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x4053EB: zalloc (util.c:21)
+==19565==    by 0x404CB8: mkSymTabRefNode (syntax-tree.c:413)
+==19565==    by 0x406C5C: yyparse (parser.y:469)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== 16,386 bytes in 1 blocks are still reachable in loss record 30 of 30
+==19565==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19565==    by 0x403027: yyalloc (lex.yy.c:1961)
+==19565==    by 0x40270E: yy_create_buffer (lex.yy.c:1505)
+==19565==    by 0x4013F2: yylex (lex.yy.c:728)
+==19565==    by 0x4057E2: yyparse (y.tab.c:1346)
+==19565==    by 0x403108: main (main.c:14)
+==19565== 
+==19565== LEAK SUMMARY:
+==19565==    definitely lost: 106 bytes in 8 blocks
+==19565==    indirectly lost: 0 bytes in 0 blocks
+==19565==      possibly lost: 0 bytes in 0 blocks
+==19565==    still reachable: 18,705 bytes in 47 blocks
+==19565==         suppressed: 0 bytes in 0 blocks
+==19565== 
+==19565== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+==19565== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)

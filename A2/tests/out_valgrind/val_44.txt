@@ -1,0 +1,687 @@
+==31659== Memcheck, a memory error detector
+==31659== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==31659== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==31659== Command: ./compile -DDEBUG -Olocal -Oglobal
+==31659== Parent PID: 28998
+==31659== 
+--31659-- 
+--31659-- Valgrind options:
+--31659--    --leak-check=full
+--31659--    --show-leak-kinds=all
+--31659--    --track-origins=yes
+--31659--    --verbose
+--31659--    --log-file=tests/out_valgrind/val_44.txt
+--31659-- Contents of /proc/version:
+--31659--   Linux version 3.13.0-170-generic (buildd@lcy01-amd64-001) (gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.4) ) #220-Ubuntu SMP Thu May 9 12:40:49 UTC 2019
+--31659-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-rdtscp-sse3
+--31659-- Page sizes: currently 4096, max supported 4096
+--31659-- Valgrind library directory: /usr/lib/valgrind
+--31659-- Reading syms from /p4/hb/berickson/private/csc553/A2/compile
+--31659-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
+--31659--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
+--31659--   .. CRC mismatch (computed aedc220e wanted 13895c11)
+--31659--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
+--31659--   .. CRC is valid
+--31659-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--31659--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--31659--   .. CRC mismatch (computed fed8e6c5 wanted e6be554a)
+--31659--    object doesn't have a symbol table
+--31659--    object doesn't have a dynamic symbol table
+--31659-- Scheduler: using generic scheduler lock implementation.
+--31659-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==31659== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-31659-by-berickson-on-???
+==31659== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-31659-by-berickson-on-???
+==31659== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-31659-by-berickson-on-???
+==31659== 
+==31659== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==31659== don't want to do, unless you know exactly what you're doing,
+==31659== or are doing some strange experiment):
+==31659==   /usr/lib/valgrind/../../bin/vgdb --pid=31659 ...command...
+==31659== 
+==31659== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==31659==   /path/to/gdb ./compile
+==31659== and then give GDB the following command
+==31659==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=31659
+==31659== --pid is optional if only one valgrind process is running
+==31659== 
+--31659-- REDIR: 0x4019d70 (ld-linux-x86-64.so.2:strlen) redirected to 0x380764b1 (???)
+--31659-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--31659--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--31659--   .. CRC mismatch (computed 4bcdfe99 wanted 3143e841)
+--31659--    object doesn't have a symbol table
+--31659-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--31659--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--31659--   .. CRC mismatch (computed 3df18bf1 wanted 14fefe1c)
+--31659--    object doesn't have a symbol table
+==31659== WARNING: new redirection conflicts with existing -- ignoring it
+--31659--     old: 0x04019d70 (strlen              ) R-> (0000.0) 0x380764b1 ???
+--31659--     new: 0x04019d70 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
+--31659-- REDIR: 0x4019b20 (ld-linux-x86-64.so.2:index) redirected to 0x4c2dd50 (index)
+--31659-- REDIR: 0x4019d40 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c2f2f0 (strcmp)
+--31659-- REDIR: 0x401aa90 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c31da0 (mempcpy)
+--31659-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
+--31659--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
+--31659--   .. CRC mismatch (computed 8932cdd8 wanted 3aceb420)
+--31659--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
+--31659--   .. CRC is valid
+--31659-- REDIR: 0x4ec4070 (libc.so.6:strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--31659-- REDIR: 0x4ec6360 (libc.so.6:strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--31659-- REDIR: 0x4ec3840 (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--31659-- REDIR: 0x4ec1ad0 (libc.so.6:rindex) redirected to 0x4c2da30 (rindex)
+--31659-- REDIR: 0x4ebe380 (libc.so.6:strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--31659-- REDIR: 0x4ed1780 (libc.so.6:__strcmp_sse2_unaligned) redirected to 0x4c2f1b0 (strcmp)
+--31659-- REDIR: 0x4eb9a80 (libc.so.6:malloc) redirected to 0x4c2ab10 (malloc)
+--31659-- REDIR: 0x4ec38d0 (libc.so.6:memset) redirected to 0x4c31350 (memset)
+--31659-- REDIR: 0x4ebfdd0 (libc.so.6:strlen) redirected to 0x4c2e0e0 (strlen)
+--31659-- REDIR: 0x4ec8a90 (libc.so.6:__GI_memcpy) redirected to 0x4c2fc90 (__GI_memcpy)
+--31659-- REDIR: 0x4eba550 (libc.so.6:calloc) redirected to 0x4c2cbf0 (calloc)
+--31659-- REDIR: 0x4ecadd0 (libc.so.6:strchrnul) redirected to 0x4c319b0 (strchrnul)
+==31659== Invalid write of size 1
+==31659==    at 0x408445: bv_set (codegen.c:1635)
+==31659==    by 0x4077D5: compute_defuse_rec (codegen.c:1220)
+==31659==    by 0x407687: compute_defuse_rec (codegen.c:1174)
+==31659==    by 0x407687: compute_defuse_rec (codegen.c:1174)
+==31659==    by 0x407687: compute_defuse_rec (codegen.c:1174)
+==31659==    by 0x407687: compute_defuse_rec (codegen.c:1174)
+==31659==    by 0x407687: compute_defuse_rec (codegen.c:1174)
+==31659==    by 0x4078C2: compute_defuse (codegen.c:1239)
+==31659==    by 0x4082E2: dead_code_elimination (codegen.c:1586)
+==31659==    by 0x405823: gen_optimizations (codegen.c:202)
+==31659==    by 0x4057A7: gen_code (codegen.c:189)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==  Address 0xffffffffffffffff is not stack'd, malloc'd or (recently) free'd
+==31659== 
+==31659== 
+==31659== Process terminating with default action of signal 11 (SIGSEGV)
+==31659==  Access not within mapped region at address 0xFFFFFFFFFFFFFFFF
+==31659==    at 0x408445: bv_set (codegen.c:1635)
+==31659==    by 0x4077D5: compute_defuse_rec (codegen.c:1220)
+==31659==    by 0x407687: compute_defuse_rec (codegen.c:1174)
+==31659==    by 0x407687: compute_defuse_rec (codegen.c:1174)
+==31659==    by 0x407687: compute_defuse_rec (codegen.c:1174)
+==31659==    by 0x407687: compute_defuse_rec (codegen.c:1174)
+==31659==    by 0x407687: compute_defuse_rec (codegen.c:1174)
+==31659==    by 0x4078C2: compute_defuse (codegen.c:1239)
+==31659==    by 0x4082E2: dead_code_elimination (codegen.c:1586)
+==31659==    by 0x405823: gen_optimizations (codegen.c:202)
+==31659==    by 0x4057A7: gen_code (codegen.c:189)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==  If you believe this happened as a result of a stack
+==31659==  overflow in your program's main thread (unlikely but
+==31659==  possible), you can try to increase the size of the
+==31659==  main thread stack using the --main-stacksize= flag.
+==31659==  The main thread stack size used in this run was 8388608.
+--31659-- REDIR: 0x4eba120 (libc.so.6:free) redirected to 0x4c2bd80 (free)
+==31659== 
+==31659== HEAP SUMMARY:
+==31659==     in use at exit: 18,406 bytes in 55 blocks
+==31659==   total heap usage: 55 allocs, 0 frees, 18,406 bytes allocated
+==31659== 
+==31659== Searching for pointers to 55 not-freed blocks
+==31659== Checked 211,408 bytes
+==31659== 
+==31659== 4 bytes in 2 blocks are definitely lost in loss record 1 of 49
+==31659==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x4EBFB49: strdup (strdup.c:42)
+==31659==    by 0x403148: id_or_keywd (scanner.l:101)
+==31659==    by 0x40164A: yylex (scanner.l:37)
+==31659==    by 0x409DFD: yyparse (y.tab.c:1349)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 6 bytes in 1 blocks are still reachable in loss record 2 of 49
+==31659==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x4EBFB49: strdup (strdup.c:42)
+==31659==    by 0x4095CC: new_temp (codegen.c:2274)
+==31659==    by 0x406B37: gen_3addr_code_arithop (codegen.c:795)
+==31659==    by 0x40594D: gen_3addr_code (codegen.c:290)
+==31659==    by 0x4062CA: gen_3addr_code_assg (codegen.c:574)
+==31659==    by 0x4058E2: gen_3addr_code (codegen.c:257)
+==31659==    by 0x4065BE: gen_3addr_code_astlist (codegen.c:652)
+==31659==    by 0x405904: gen_3addr_code (codegen.c:265)
+==31659==    by 0x4059CB: gen_3addr_code_funcbody (codegen.c:321)
+==31659==    by 0x405797: gen_code (codegen.c:188)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659== 
+==31659== 8 bytes in 1 blocks are still reachable in loss record 3 of 49
+==31659==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x403097: yyalloc (lex.yy.c:1961)
+==31659==    by 0x402BAE: yyensure_buffer_stack (lex.yy.c:1661)
+==31659==    by 0x401438: yylex (lex.yy.c:726)
+==31659==    by 0x409DFD: yyparse (y.tab.c:1349)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 10 bytes in 4 blocks are still reachable in loss record 4 of 49
+==31659==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x4EBFB49: strdup (strdup.c:42)
+==31659==    by 0x403148: id_or_keywd (scanner.l:101)
+==31659==    by 0x40164A: yylex (scanner.l:37)
+==31659==    by 0x409DFD: yyparse (y.tab.c:1349)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 16 bytes in 1 blocks are still reachable in loss record 5 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x409322: mk_stptr_op (codegen.c:2162)
+==31659==    by 0x406B82: gen_3addr_code_arithop (codegen.c:802)
+==31659==    by 0x40594D: gen_3addr_code (codegen.c:290)
+==31659==    by 0x4062CA: gen_3addr_code_assg (codegen.c:574)
+==31659==    by 0x4058E2: gen_3addr_code (codegen.c:257)
+==31659==    by 0x4065BE: gen_3addr_code_astlist (codegen.c:652)
+==31659==    by 0x405904: gen_3addr_code (codegen.c:265)
+==31659==    by 0x4059CB: gen_3addr_code_funcbody (codegen.c:321)
+==31659==    by 0x405797: gen_code (codegen.c:188)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659== 
+==31659== 16 bytes in 1 blocks are still reachable in loss record 6 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x409322: mk_stptr_op (codegen.c:2162)
+==31659==    by 0x406BF5: gen_3addr_code_arithop (codegen.c:818)
+==31659==    by 0x40594D: gen_3addr_code (codegen.c:290)
+==31659==    by 0x4062CA: gen_3addr_code_assg (codegen.c:574)
+==31659==    by 0x4058E2: gen_3addr_code (codegen.c:257)
+==31659==    by 0x4065BE: gen_3addr_code_astlist (codegen.c:652)
+==31659==    by 0x405904: gen_3addr_code (codegen.c:265)
+==31659==    by 0x4059CB: gen_3addr_code_funcbody (codegen.c:321)
+==31659==    by 0x405797: gen_code (codegen.c:188)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659== 
+==31659== 16 bytes in 1 blocks are still reachable in loss record 7 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x409322: mk_stptr_op (codegen.c:2162)
+==31659==    by 0x406C09: gen_3addr_code_arithop (codegen.c:821)
+==31659==    by 0x40594D: gen_3addr_code (codegen.c:290)
+==31659==    by 0x4062CA: gen_3addr_code_assg (codegen.c:574)
+==31659==    by 0x4058E2: gen_3addr_code (codegen.c:257)
+==31659==    by 0x4065BE: gen_3addr_code_astlist (codegen.c:652)
+==31659==    by 0x405904: gen_3addr_code (codegen.c:265)
+==31659==    by 0x4059CB: gen_3addr_code_funcbody (codegen.c:321)
+==31659==    by 0x405797: gen_code (codegen.c:188)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659== 
+==31659== 16 bytes in 1 blocks are still reachable in loss record 8 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x409322: mk_stptr_op (codegen.c:2162)
+==31659==    by 0x40941A: mk_expr_op (codegen.c:2211)
+==31659==    by 0x4062DE: gen_3addr_code_assg (codegen.c:576)
+==31659==    by 0x4058E2: gen_3addr_code (codegen.c:257)
+==31659==    by 0x4065BE: gen_3addr_code_astlist (codegen.c:652)
+==31659==    by 0x405904: gen_3addr_code (codegen.c:265)
+==31659==    by 0x4059CB: gen_3addr_code_funcbody (codegen.c:321)
+==31659==    by 0x405797: gen_code (codegen.c:188)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 16 bytes in 1 blocks are still reachable in loss record 9 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x409322: mk_stptr_op (codegen.c:2162)
+==31659==    by 0x40941A: mk_expr_op (codegen.c:2211)
+==31659==    by 0x4062F5: gen_3addr_code_assg (codegen.c:576)
+==31659==    by 0x4058E2: gen_3addr_code (codegen.c:257)
+==31659==    by 0x4065BE: gen_3addr_code_astlist (codegen.c:652)
+==31659==    by 0x405904: gen_3addr_code (codegen.c:265)
+==31659==    by 0x4059CB: gen_3addr_code_funcbody (codegen.c:321)
+==31659==    by 0x405797: gen_code (codegen.c:188)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 16 bytes in 1 blocks are still reachable in loss record 10 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x409322: mk_stptr_op (codegen.c:2162)
+==31659==    by 0x4063DB: gen_3addr_code_return (codegen.c:599)
+==31659==    by 0x4058F3: gen_3addr_code (codegen.c:261)
+==31659==    by 0x4065BE: gen_3addr_code_astlist (codegen.c:652)
+==31659==    by 0x405904: gen_3addr_code (codegen.c:265)
+==31659==    by 0x4059CB: gen_3addr_code_funcbody (codegen.c:321)
+==31659==    by 0x405797: gen_code (codegen.c:188)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 16 bytes in 1 blocks are still reachable in loss record 11 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x409322: mk_stptr_op (codegen.c:2162)
+==31659==    by 0x4059DA: gen_3addr_code_funcbody (codegen.c:326)
+==31659==    by 0x405797: gen_code (codegen.c:188)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 16 bytes in 1 blocks are still reachable in loss record 12 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x4071C0: gen_cfg (codegen.c:1022)
+==31659==    by 0x4057F7: gen_optimizations (codegen.c:198)
+==31659==    by 0x4057A7: gen_code (codegen.c:189)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 16 bytes in 1 blocks are still reachable in loss record 13 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x40833B: new_bitvec (codegen.c:1611)
+==31659==    by 0x407895: compute_defuse (codegen.c:1236)
+==31659==    by 0x4082E2: dead_code_elimination (codegen.c:1586)
+==31659==    by 0x405823: gen_optimizations (codegen.c:202)
+==31659==    by 0x4057A7: gen_code (codegen.c:189)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 16 bytes in 1 blocks are still reachable in loss record 14 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x40833B: new_bitvec (codegen.c:1611)
+==31659==    by 0x4078A3: compute_defuse (codegen.c:1237)
+==31659==    by 0x4082E2: dead_code_elimination (codegen.c:1586)
+==31659==    by 0x405823: gen_optimizations (codegen.c:202)
+==31659==    by 0x4057A7: gen_code (codegen.c:189)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 24 bytes in 1 blocks are still reachable in loss record 15 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x4056F1: NewListNode (util.c:39)
+==31659==    by 0x40A159: yyparse (parser.y:145)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 24 bytes in 1 blocks are still reachable in loss record 16 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x4074A2: new_cfgi (codegen.c:1106)
+==31659==    by 0x4073BB: bb_add_ins (codegen.c:1082)
+==31659==    by 0x40721F: gen_cfg (codegen.c:1032)
+==31659==    by 0x4057F7: gen_optimizations (codegen.c:198)
+==31659==    by 0x4057A7: gen_code (codegen.c:189)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 24 bytes in 1 blocks are still reachable in loss record 17 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x4074A2: new_cfgi (codegen.c:1106)
+==31659==    by 0x407514: cfgi_add_ins (codegen.c:1118)
+==31659==    by 0x4073DC: bb_add_ins (codegen.c:1084)
+==31659==    by 0x40721F: gen_cfg (codegen.c:1032)
+==31659==    by 0x4057F7: gen_optimizations (codegen.c:198)
+==31659==    by 0x4057A7: gen_code (codegen.c:189)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 24 bytes in 1 blocks are still reachable in loss record 18 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x4074A2: new_cfgi (codegen.c:1106)
+==31659==    by 0x407514: cfgi_add_ins (codegen.c:1118)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x4073DC: bb_add_ins (codegen.c:1084)
+==31659==    by 0x40721F: gen_cfg (codegen.c:1032)
+==31659==    by 0x4057F7: gen_optimizations (codegen.c:198)
+==31659==    by 0x4057A7: gen_code (codegen.c:189)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 24 bytes in 1 blocks are still reachable in loss record 19 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x4074A2: new_cfgi (codegen.c:1106)
+==31659==    by 0x407514: cfgi_add_ins (codegen.c:1118)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x4073DC: bb_add_ins (codegen.c:1084)
+==31659==    by 0x40721F: gen_cfg (codegen.c:1032)
+==31659==    by 0x4057F7: gen_optimizations (codegen.c:198)
+==31659==    by 0x4057A7: gen_code (codegen.c:189)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 24 bytes in 1 blocks are still reachable in loss record 20 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x4074A2: new_cfgi (codegen.c:1106)
+==31659==    by 0x407514: cfgi_add_ins (codegen.c:1118)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x4073DC: bb_add_ins (codegen.c:1084)
+==31659==    by 0x40721F: gen_cfg (codegen.c:1032)
+==31659==    by 0x4057F7: gen_optimizations (codegen.c:198)
+==31659==    by 0x4057A7: gen_code (codegen.c:189)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659== 
+==31659== 24 bytes in 1 blocks are still reachable in loss record 21 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x4074A2: new_cfgi (codegen.c:1106)
+==31659==    by 0x407514: cfgi_add_ins (codegen.c:1118)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x4073DC: bb_add_ins (codegen.c:1084)
+==31659==    by 0x40721F: gen_cfg (codegen.c:1032)
+==31659==    by 0x4057F7: gen_optimizations (codegen.c:198)
+==31659==    by 0x4057A7: gen_code (codegen.c:189)
+==31659== 
+==31659== 24 bytes in 1 blocks are still reachable in loss record 22 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x4074A2: new_cfgi (codegen.c:1106)
+==31659==    by 0x407514: cfgi_add_ins (codegen.c:1118)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x4073DC: bb_add_ins (codegen.c:1084)
+==31659==    by 0x40721F: gen_cfg (codegen.c:1032)
+==31659==    by 0x4057F7: gen_optimizations (codegen.c:198)
+==31659== 
+==31659== 24 bytes in 1 blocks are still reachable in loss record 23 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x4074A2: new_cfgi (codegen.c:1106)
+==31659==    by 0x407514: cfgi_add_ins (codegen.c:1118)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x4073DC: bb_add_ins (codegen.c:1084)
+==31659==    by 0x40721F: gen_cfg (codegen.c:1032)
+==31659== 
+==31659== 24 bytes in 1 blocks are still reachable in loss record 24 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x4074A2: new_cfgi (codegen.c:1106)
+==31659==    by 0x407514: cfgi_add_ins (codegen.c:1118)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x4073DC: bb_add_ins (codegen.c:1084)
+==31659== 
+==31659== 24 bytes in 1 blocks are still reachable in loss record 25 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x4074A2: new_cfgi (codegen.c:1106)
+==31659==    by 0x407514: cfgi_add_ins (codegen.c:1118)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659==    by 0x407501: cfgi_add_ins (codegen.c:1116)
+==31659== 
+==31659== 56 bytes in 1 blocks are still reachable in loss record 26 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x40948C: new_instr (codegen.c:2232)
+==31659==    by 0x4066A3: gen_3addr_code_id (codegen.c:680)
+==31659==    by 0x405915: gen_3addr_code (codegen.c:269)
+==31659==    by 0x4062BA: gen_3addr_code_assg (codegen.c:573)
+==31659==    by 0x4058E2: gen_3addr_code (codegen.c:257)
+==31659==    by 0x4065BE: gen_3addr_code_astlist (codegen.c:652)
+==31659==    by 0x405904: gen_3addr_code (codegen.c:265)
+==31659==    by 0x4059CB: gen_3addr_code_funcbody (codegen.c:321)
+==31659==    by 0x405797: gen_code (codegen.c:188)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659== 
+==31659== 56 bytes in 1 blocks are still reachable in loss record 27 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x40948C: new_instr (codegen.c:2232)
+==31659==    by 0x4066A3: gen_3addr_code_id (codegen.c:680)
+==31659==    by 0x405915: gen_3addr_code (codegen.c:269)
+==31659==    by 0x406B4F: gen_3addr_code_arithop (codegen.c:796)
+==31659==    by 0x40594D: gen_3addr_code (codegen.c:290)
+==31659==    by 0x4062CA: gen_3addr_code_assg (codegen.c:574)
+==31659==    by 0x4058E2: gen_3addr_code (codegen.c:257)
+==31659==    by 0x4065BE: gen_3addr_code_astlist (codegen.c:652)
+==31659==    by 0x405904: gen_3addr_code (codegen.c:265)
+==31659==    by 0x4059CB: gen_3addr_code_funcbody (codegen.c:321)
+==31659== 
+==31659== 56 bytes in 1 blocks are still reachable in loss record 28 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x40948C: new_instr (codegen.c:2232)
+==31659==    by 0x4066A3: gen_3addr_code_id (codegen.c:680)
+==31659==    by 0x405915: gen_3addr_code (codegen.c:269)
+==31659==    by 0x406BC2: gen_3addr_code_arithop (codegen.c:812)
+==31659==    by 0x40594D: gen_3addr_code (codegen.c:290)
+==31659==    by 0x4062CA: gen_3addr_code_assg (codegen.c:574)
+==31659==    by 0x4058E2: gen_3addr_code (codegen.c:257)
+==31659==    by 0x4065BE: gen_3addr_code_astlist (codegen.c:652)
+==31659==    by 0x405904: gen_3addr_code (codegen.c:265)
+==31659==    by 0x4059CB: gen_3addr_code_funcbody (codegen.c:321)
+==31659== 
+==31659== 56 bytes in 1 blocks are still reachable in loss record 29 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x40948C: new_instr (codegen.c:2232)
+==31659==    by 0x406C1E: gen_3addr_code_arithop (codegen.c:821)
+==31659==    by 0x40594D: gen_3addr_code (codegen.c:290)
+==31659==    by 0x4062CA: gen_3addr_code_assg (codegen.c:574)
+==31659==    by 0x4058E2: gen_3addr_code (codegen.c:257)
+==31659==    by 0x4065BE: gen_3addr_code_astlist (codegen.c:652)
+==31659==    by 0x405904: gen_3addr_code (codegen.c:265)
+==31659==    by 0x4059CB: gen_3addr_code_funcbody (codegen.c:321)
+==31659==    by 0x405797: gen_code (codegen.c:188)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659== 
+==31659== 56 bytes in 1 blocks are still reachable in loss record 30 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x40948C: new_instr (codegen.c:2232)
+==31659==    by 0x40630A: gen_3addr_code_assg (codegen.c:576)
+==31659==    by 0x4058E2: gen_3addr_code (codegen.c:257)
+==31659==    by 0x4065BE: gen_3addr_code_astlist (codegen.c:652)
+==31659==    by 0x405904: gen_3addr_code (codegen.c:265)
+==31659==    by 0x4059CB: gen_3addr_code_funcbody (codegen.c:321)
+==31659==    by 0x405797: gen_code (codegen.c:188)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 56 bytes in 1 blocks are still reachable in loss record 31 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x40948C: new_instr (codegen.c:2232)
+==31659==    by 0x4063F2: gen_3addr_code_return (codegen.c:599)
+==31659==    by 0x4058F3: gen_3addr_code (codegen.c:261)
+==31659==    by 0x4065BE: gen_3addr_code_astlist (codegen.c:652)
+==31659==    by 0x405904: gen_3addr_code (codegen.c:265)
+==31659==    by 0x4059CB: gen_3addr_code_funcbody (codegen.c:321)
+==31659==    by 0x405797: gen_code (codegen.c:188)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 56 bytes in 1 blocks are still reachable in loss record 32 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x40948C: new_instr (codegen.c:2232)
+==31659==    by 0x40640F: gen_3addr_code_return (codegen.c:600)
+==31659==    by 0x4058F3: gen_3addr_code (codegen.c:261)
+==31659==    by 0x4065BE: gen_3addr_code_astlist (codegen.c:652)
+==31659==    by 0x405904: gen_3addr_code (codegen.c:265)
+==31659==    by 0x4059CB: gen_3addr_code_funcbody (codegen.c:321)
+==31659==    by 0x405797: gen_code (codegen.c:188)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 56 bytes in 1 blocks are still reachable in loss record 33 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x40948C: new_instr (codegen.c:2232)
+==31659==    by 0x4059F9: gen_3addr_code_funcbody (codegen.c:327)
+==31659==    by 0x405797: gen_code (codegen.c:188)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 56 bytes in 1 blocks are still reachable in loss record 34 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x40948C: new_instr (codegen.c:2232)
+==31659==    by 0x405A18: gen_3addr_code_funcbody (codegen.c:328)
+==31659==    by 0x405797: gen_code (codegen.c:188)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 56 bytes in 1 blocks are still reachable in loss record 35 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x40948C: new_instr (codegen.c:2232)
+==31659==    by 0x405A35: gen_3addr_code_funcbody (codegen.c:329)
+==31659==    by 0x405797: gen_code (codegen.c:188)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 64 bytes in 1 blocks are still reachable in loss record 36 of 49
+==31659==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x403097: yyalloc (lex.yy.c:1961)
+==31659==    by 0x402747: yy_create_buffer (lex.yy.c:1496)
+==31659==    by 0x401462: yylex (lex.yy.c:728)
+==31659==    by 0x409DFD: yyparse (y.tab.c:1349)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 64 bytes in 1 blocks are still reachable in loss record 37 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x405021: mkExprNode (syntax-tree.c:424)
+==31659==    by 0x405453: SynTreeBinExp (syntax-tree.c:635)
+==31659==    by 0x40AB58: yyparse (parser.y:332)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 64 bytes in 1 blocks are still reachable in loss record 38 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x405021: mkExprNode (syntax-tree.c:424)
+==31659==    by 0x40A8D8: yyparse (parser.y:310)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 64 bytes in 1 blocks are still reachable in loss record 39 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x405110: mkListNode (syntax-tree.c:474)
+==31659==    by 0x40A372: yyparse (parser.y:201)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 64 bytes in 1 blocks are still reachable in loss record 40 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x40507E: mkSTNode (syntax-tree.c:446)
+==31659==    by 0x4055AA: AppendReturn (syntax-tree.c:707)
+==31659==    by 0x409FC1: yyparse (parser.y:91)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 64 bytes in 1 blocks are still reachable in loss record 41 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x405110: mkListNode (syntax-tree.c:474)
+==31659==    by 0x4055B7: AppendReturn (syntax-tree.c:707)
+==31659==    by 0x409FC1: yyparse (parser.y:91)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 72 bytes in 1 blocks are still reachable in loss record 42 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x403DAF: SymTabInsert (symbol-table.c:122)
+==31659==    by 0x40A266: yyparse (parser.y:177)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 72 bytes in 1 blocks are still reachable in loss record 43 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x403DAF: SymTabInsert (symbol-table.c:122)
+==31659==    by 0x404009: SymTabRecordFunInfo (symbol-table.c:202)
+==31659==    by 0x409F9F: yyparse (parser.y:88)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 72 bytes in 1 blocks are still reachable in loss record 44 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x403DAF: SymTabInsert (symbol-table.c:122)
+==31659==    by 0x40408F: SymTabRecordFunInfo (symbol-table.c:219)
+==31659==    by 0x409F9F: yyparse (parser.y:88)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 72 bytes in 1 blocks are still reachable in loss record 45 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x4040E5: SymTabRecordFunInfo (symbol-table.c:235)
+==31659==    by 0x409F9F: yyparse (parser.y:88)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 72 bytes in 1 blocks are still reachable in loss record 46 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x403DAF: SymTabInsert (symbol-table.c:122)
+==31659==    by 0x4095D9: new_temp (codegen.c:2274)
+==31659==    by 0x406B37: gen_3addr_code_arithop (codegen.c:795)
+==31659==    by 0x40594D: gen_3addr_code (codegen.c:290)
+==31659==    by 0x4062CA: gen_3addr_code_assg (codegen.c:574)
+==31659==    by 0x4058E2: gen_3addr_code (codegen.c:257)
+==31659==    by 0x4065BE: gen_3addr_code_astlist (codegen.c:652)
+==31659==    by 0x405904: gen_3addr_code (codegen.c:265)
+==31659==    by 0x4059CB: gen_3addr_code_funcbody (codegen.c:321)
+==31659==    by 0x405797: gen_code (codegen.c:188)
+==31659== 
+==31659== 72 bytes in 1 blocks are still reachable in loss record 47 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x407336: new_block (codegen.c:1069)
+==31659==    by 0x4071A6: gen_cfg (codegen.c:1019)
+==31659==    by 0x4057F7: gen_optimizations (codegen.c:198)
+==31659==    by 0x4057A7: gen_code (codegen.c:189)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 192 bytes in 3 blocks are still reachable in loss record 48 of 49
+==31659==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x40569F: zalloc (util.c:21)
+==31659==    by 0x404FCC: mkSymTabRefNode (syntax-tree.c:407)
+==31659==    by 0x40B27F: yyparse (parser.y:472)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== 16,386 bytes in 1 blocks are still reachable in loss record 49 of 49
+==31659==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31659==    by 0x403097: yyalloc (lex.yy.c:1961)
+==31659==    by 0x40277E: yy_create_buffer (lex.yy.c:1505)
+==31659==    by 0x401462: yylex (lex.yy.c:728)
+==31659==    by 0x409DFD: yyparse (y.tab.c:1349)
+==31659==    by 0x403223: main (main.c:30)
+==31659== 
+==31659== LEAK SUMMARY:
+==31659==    definitely lost: 4 bytes in 2 blocks
+==31659==    indirectly lost: 0 bytes in 0 blocks
+==31659==      possibly lost: 0 bytes in 0 blocks
+==31659==    still reachable: 18,402 bytes in 53 blocks
+==31659==         suppressed: 0 bytes in 0 blocks
+==31659== 
+==31659== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==31659== 
+==31659== 1 errors in context 1 of 2:
+==31659== Invalid write of size 1
+==31659==    at 0x408445: bv_set (codegen.c:1635)
+==31659==    by 0x4077D5: compute_defuse_rec (codegen.c:1220)
+==31659==    by 0x407687: compute_defuse_rec (codegen.c:1174)
+==31659==    by 0x407687: compute_defuse_rec (codegen.c:1174)
+==31659==    by 0x407687: compute_defuse_rec (codegen.c:1174)
+==31659==    by 0x407687: compute_defuse_rec (codegen.c:1174)
+==31659==    by 0x407687: compute_defuse_rec (codegen.c:1174)
+==31659==    by 0x4078C2: compute_defuse (codegen.c:1239)
+==31659==    by 0x4082E2: dead_code_elimination (codegen.c:1586)
+==31659==    by 0x405823: gen_optimizations (codegen.c:202)
+==31659==    by 0x4057A7: gen_code (codegen.c:189)
+==31659==    by 0x409FE1: yyparse (parser.y:97)
+==31659==  Address 0xffffffffffffffff is not stack'd, malloc'd or (recently) free'd
+==31659== 
+==31659== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)

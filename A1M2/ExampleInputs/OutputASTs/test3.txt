@@ -1,0 +1,21 @@
+@@FUN: foo1
+@@BODY:
+0:    {
+1:      RETURN:
+2:        intcon(0);
+0:    }
+-----
+@@FUN: foo2
+@@BODY:
+0:    {
+1:      RETURN:
+2:        intcon(0);
+0:    }
+-----
+@@FUN: foo3
+@@BODY:
+0:    {
+1:      RETURN:
+2:        intcon(0);
+0:    }
+-----

@@ -1,0 +1,25 @@
+@@FUN: f
+@@BODY:
+0:    RETURN:
+1:      -null-
+-----
+@@FUN: g
+@@BODY:
+0:    {
+1:      ASSG:
+1:        Lhs:
+2:          id(name=x, scope=L);
+1:        Rhs:
+2:          intcon(10);
+1:      ASSG:
+1:        Lhs:
+2:          id(name=x, scope=L);
+1:        Rhs:
+2:          +(
+3:            id(name=x, scope=L);
+3:            intcon(1);
+2:          )
+1:      RETURN:
+2:        -null-
+0:    }
+-----

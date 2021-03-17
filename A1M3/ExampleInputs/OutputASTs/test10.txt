@@ -1,0 +1,24 @@
+@@FUN: foo
+@@BODY:
+0:    {
+1:      ASSG:
+1:        Lhs:
+2:          id(name=x, scope=L);
+1:        Rhs:
+2:          CALL: callee=foo
+2:            args:
+3:              -null-
+1:      RETURN:
+2:        id(name=x, scope=L);
+0:    }
+-----
+@@FUN: bar
+@@BODY:
+0:    {
+1:      CALL: callee=bar
+1:        args:
+2:          -null-
+1:      RETURN:
+2:        -null-
+0:    }
+-----

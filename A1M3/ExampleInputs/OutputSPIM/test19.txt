@@ -1,0 +1,5 @@
+Loaded: /home/cs553/spring21/spim-stats/share/exceptions.s
+The following symbols are undefined:
+_bar
+main
+

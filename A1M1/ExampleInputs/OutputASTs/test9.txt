@@ -1,0 +1,18 @@
+@@FUN: foo
+@@BODY:
+0:    {
+1:      RETURN:
+2:        arrayRef(id(name=a, scope=G),
+3:                 id(name=x, scope=L);
+2:                )
+0:    }
+-----
+@@FUN: bar
+@@BODY:
+0:    {
+1:      RETURN:
+2:        arrayRef(id(name=x, scope=G),
+3:                 id(name=a, scope=L);
+2:                )
+0:    }
+-----

@@ -1,0 +1,35 @@
+@@FUN: foo
+@@BODY:
+0:    {
+1:      RETURN:
+2:        intcon(0);
+0:    }
+-----
+@@FUN: bar
+@@BODY:
+0:    {
+1:      RETURN:
+2:        intcon(1);
+0:    }
+-----
+@@FUN: ggg
+@@BODY:
+0:    {
+1:      RETURN:
+2:        -null-
+0:    }
+-----
+@@FUN: hhh
+@@BODY:
+0:    {
+1:      RETURN:
+2:        -null-
+0:    }
+-----
+@@FUN: iii
+@@BODY:
+0:    {
+1:      RETURN:
+2:        charcon(97);
+0:    }
+-----

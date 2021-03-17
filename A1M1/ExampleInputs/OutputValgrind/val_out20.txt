@@ -1,0 +1,449 @@
+==7242== Memcheck, a memory error detector
+==7242== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==7242== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==7242== Command: ./compile -DDEBUG
+==7242== Parent PID: 6983
+==7242== 
+--7242-- 
+--7242-- Valgrind options:
+--7242--    --leak-check=full
+--7242--    --show-leak-kinds=all
+--7242--    --track-origins=yes
+--7242--    --verbose
+--7242--    --log-file=ExampleInputs/OutputValgrind/val_out20.txt
+--7242-- Contents of /proc/version:
+--7242--   Linux version 3.13.0-170-generic (buildd@lcy01-amd64-001) (gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.4) ) #220-Ubuntu SMP Thu May 9 12:40:49 UTC 2019
+--7242-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-rdtscp-sse3
+--7242-- Page sizes: currently 4096, max supported 4096
+--7242-- Valgrind library directory: /usr/lib/valgrind
+--7242-- Reading syms from /p4/hb/berickson/private/csc553/A1M1/compile
+--7242-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
+--7242--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
+--7242--   .. CRC mismatch (computed aedc220e wanted 13895c11)
+--7242--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
+--7242--   .. CRC is valid
+--7242-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--7242--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--7242--   .. CRC mismatch (computed fed8e6c5 wanted e6be554a)
+--7242--    object doesn't have a symbol table
+--7242--    object doesn't have a dynamic symbol table
+--7242-- Scheduler: using generic scheduler lock implementation.
+--7242-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==7242== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-7242-by-berickson-on-???
+==7242== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-7242-by-berickson-on-???
+==7242== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-7242-by-berickson-on-???
+==7242== 
+==7242== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==7242== don't want to do, unless you know exactly what you're doing,
+==7242== or are doing some strange experiment):
+==7242==   /usr/lib/valgrind/../../bin/vgdb --pid=7242 ...command...
+==7242== 
+==7242== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==7242==   /path/to/gdb ./compile
+==7242== and then give GDB the following command
+==7242==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=7242
+==7242== --pid is optional if only one valgrind process is running
+==7242== 
+--7242-- REDIR: 0x4019d70 (ld-linux-x86-64.so.2:strlen) redirected to 0x380764b1 (???)
+--7242-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--7242--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--7242--   .. CRC mismatch (computed 4bcdfe99 wanted 3143e841)
+--7242--    object doesn't have a symbol table
+--7242-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--7242--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--7242--   .. CRC mismatch (computed 3df18bf1 wanted 14fefe1c)
+--7242--    object doesn't have a symbol table
+==7242== WARNING: new redirection conflicts with existing -- ignoring it
+--7242--     old: 0x04019d70 (strlen              ) R-> (0000.0) 0x380764b1 ???
+--7242--     new: 0x04019d70 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
+--7242-- REDIR: 0x4019b20 (ld-linux-x86-64.so.2:index) redirected to 0x4c2dd50 (index)
+--7242-- REDIR: 0x4019d40 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c2f2f0 (strcmp)
+--7242-- REDIR: 0x401aa90 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c31da0 (mempcpy)
+--7242-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
+--7242--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
+--7242--   .. CRC mismatch (computed 8932cdd8 wanted 3aceb420)
+--7242--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
+--7242--   .. CRC is valid
+--7242-- REDIR: 0x4ec4070 (libc.so.6:strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--7242-- REDIR: 0x4ec6360 (libc.so.6:strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--7242-- REDIR: 0x4ec3840 (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--7242-- REDIR: 0x4ec1ad0 (libc.so.6:rindex) redirected to 0x4c2da30 (rindex)
+--7242-- REDIR: 0x4eb9a80 (libc.so.6:malloc) redirected to 0x4c2ab10 (malloc)
+--7242-- REDIR: 0x4ec38d0 (libc.so.6:memset) redirected to 0x4c31350 (memset)
+--7242-- REDIR: 0x4ebe380 (libc.so.6:strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--7242-- REDIR: 0x4ed1780 (libc.so.6:__strcmp_sse2_unaligned) redirected to 0x4c2f1b0 (strcmp)
+--7242-- REDIR: 0x4ebfdd0 (libc.so.6:strlen) redirected to 0x4c2e0e0 (strlen)
+--7242-- REDIR: 0x4ec8a90 (libc.so.6:__GI_memcpy) redirected to 0x4c2fc90 (__GI_memcpy)
+--7242-- REDIR: 0x4eba550 (libc.so.6:calloc) redirected to 0x4c2cbf0 (calloc)
+--7242-- REDIR: 0x4ecadd0 (libc.so.6:strchrnul) redirected to 0x4c319b0 (strchrnul)
+==7242== Invalid read of size 4
+==7242==    at 0x4074A6: GEN_node (threeac-gen.c:70)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7242== 
+==7242== 
+==7242== Process terminating with default action of signal 11 (SIGSEGV)
+==7242==  Access not within mapped region at address 0x0
+==7242==    at 0x4074A6: GEN_node (threeac-gen.c:70)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==  If you believe this happened as a result of a stack
+==7242==  overflow in your program's main thread (unlikely but
+==7242==  possible), you can try to increase the size of the
+==7242==  main thread stack using the --main-stacksize= flag.
+==7242==  The main thread stack size used in this run was 8388608.
+--7242-- REDIR: 0x4eba120 (libc.so.6:free) redirected to 0x4c2bd80 (free)
+==7242== 
+==7242== HEAP SUMMARY:
+==7242==     in use at exit: 20,366 bytes in 80 blocks
+==7242==   total heap usage: 80 allocs, 0 frees, 20,366 bytes allocated
+==7242== 
+==7242== Searching for pointers to 80 not-freed blocks
+==7242== Checked 213,832 bytes
+==7242== 
+==7242== 8 bytes in 1 blocks are still reachable in loss record 1 of 30
+==7242==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x403027: yyalloc (lex.yy.c:1961)
+==7242==    by 0x402B3E: yyensure_buffer_stack (lex.yy.c:1661)
+==7242==    by 0x4013C8: yylex (lex.yy.c:726)
+==7242==    by 0x405777: yyparse (y.tab.c:1346)
+==7242==    by 0x403108: main (main.c:14)
+==7242== 
+==7242== 10 bytes in 4 blocks are still reachable in loss record 2 of 30
+==7242==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x4EBFB49: strdup (strdup.c:42)
+==7242==    by 0x4030D8: id_or_keywd (scanner.l:101)
+==7242==    by 0x4015DA: yylex (scanner.l:37)
+==7242==    by 0x405777: yyparse (y.tab.c:1346)
+==7242==    by 0x403108: main (main.c:14)
+==7242== 
+==7242== 10 bytes in 5 blocks are definitely lost in loss record 3 of 30
+==7242==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x4EBFB49: strdup (strdup.c:42)
+==7242==    by 0x4030D8: id_or_keywd (scanner.l:101)
+==7242==    by 0x4015DA: yylex (scanner.l:37)
+==7242==    by 0x405777: yyparse (y.tab.c:1346)
+==7242==    by 0x403108: main (main.c:14)
+==7242== 
+==7242== 48 bytes in 2 blocks are still reachable in loss record 4 of 30
+==7242==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x405380: zalloc (util.c:21)
+==7242==    by 0x4053D2: NewListNode (util.c:39)
+==7242==    by 0x405ACB: yyparse (parser.y:142)
+==7242==    by 0x403108: main (main.c:14)
+==7242== 
+==7242== 56 bytes in 1 blocks are still reachable in loss record 5 of 30
+==7242==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x405380: zalloc (util.c:21)
+==7242==    by 0x403E8B: SymTabInsert (symbol-table.c:202)
+==7242==    by 0x4040DA: SymTabRecordFunInfo (symbol-table.c:281)
+==7242==    by 0x405919: yyparse (parser.y:87)
+==7242==    by 0x403108: main (main.c:14)
+==7242== 
+==7242== 56 bytes in 1 blocks are still reachable in loss record 6 of 30
+==7242==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x405380: zalloc (util.c:21)
+==7242==    by 0x404CBA: mkExprNode (syntax-tree.c:433)
+==7242==    by 0x405134: SynTreeBinExp (syntax-tree.c:653)
+==7242==    by 0x406468: yyparse (parser.y:327)
+==7242==    by 0x403108: main (main.c:14)
+==7242== 
+==7242== 56 bytes in 1 blocks are still reachable in loss record 7 of 30
+==7242==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x405380: zalloc (util.c:21)
+==7242==    by 0x404CBA: mkExprNode (syntax-tree.c:433)
+==7242==    by 0x405134: SynTreeBinExp (syntax-tree.c:653)
+==7242==    by 0x406499: yyparse (parser.y:328)
+==7242==    by 0x403108: main (main.c:14)
+==7242== 
+==7242== 56 bytes in 1 blocks are still reachable in loss record 8 of 30
+==7242==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x405380: zalloc (util.c:21)
+==7242==    by 0x404D2F: mkSTNode (syntax-tree.c:458)
+==7242==    by 0x40528B: AppendReturn (syntax-tree.c:725)
+==7242==    by 0x40593B: yyparse (parser.y:90)
+==7242==    by 0x403108: main (main.c:14)
+==7242== 
+==7242== 56 bytes in 1 blocks are still reachable in loss record 9 of 30
+==7242==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x405380: zalloc (util.c:21)
+==7242==    by 0x404DD9: mkListNode (syntax-tree.c:489)
+==7242==    by 0x405298: AppendReturn (syntax-tree.c:725)
+==7242==    by 0x40593B: yyparse (parser.y:90)
+==7242==    by 0x403108: main (main.c:14)
+==7242== 
+==7242== 64 bytes in 1 blocks are still reachable in loss record 10 of 30
+==7242==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x403027: yyalloc (lex.yy.c:1961)
+==7242==    by 0x4026D7: yy_create_buffer (lex.yy.c:1496)
+==7242==    by 0x4013F2: yylex (lex.yy.c:728)
+==7242==    by 0x405777: yyparse (y.tab.c:1346)
+==7242==    by 0x403108: main (main.c:14)
+==7242== 
+==7242== 64 bytes in 1 blocks are still reachable in loss record 11 of 30
+==7242==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x407273: newinstr (threeac-gen.c:24)
+==7242==    by 0x407322: newlabel (threeac-gen.c:36)
+==7242==    by 0x407398: gen3ac (threeac-gen.c:56)
+==7242==    by 0x40862A: genCode (mips-gen.c:30)
+==7242==    by 0x405962: yyparse (parser.y:97)
+==7242==    by 0x403108: main (main.c:14)
+==7242== 
+==7242== 64 bytes in 1 blocks are still reachable in loss record 12 of 30
+==7242==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x407273: newinstr (threeac-gen.c:24)
+==7242==    by 0x4073F8: gen3ac (threeac-gen.c:58)
+==7242==    by 0x40862A: genCode (mips-gen.c:30)
+==7242==    by 0x405962: yyparse (parser.y:97)
+==7242==    by 0x403108: main (main.c:14)
+==7242== 
+==7242== 112 bytes in 2 blocks are still reachable in loss record 13 of 30
+==7242==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x405380: zalloc (util.c:21)
+==7242==    by 0x403E8B: SymTabInsert (symbol-table.c:202)
+==7242==    by 0x404159: SymTabRecordFunInfo (symbol-table.c:297)
+==7242==    by 0x405919: yyparse (parser.y:87)
+==7242==    by 0x403108: main (main.c:14)
+==7242== 
+==7242== 112 bytes in 2 blocks are still reachable in loss record 14 of 30
+==7242==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x405380: zalloc (util.c:21)
+==7242==    by 0x4041AF: SymTabRecordFunInfo (symbol-table.c:313)
+==7242==    by 0x405919: yyparse (parser.y:87)
+==7242==    by 0x403108: main (main.c:14)
+==7242== 
+==7242== 112 bytes in 2 blocks are still reachable in loss record 15 of 30
+==7242==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x405380: zalloc (util.c:21)
+==7242==    by 0x403E8B: SymTabInsert (symbol-table.c:202)
+==7242==    by 0x407234: newtemp (threeac-gen.c:18)
+==7242==    by 0x407683: GEN_const (threeac-gen.c:186)
+==7242==    by 0x4075B9: GEN_expr (threeac-gen.c:132)
+==7242==    by 0x40831A: GEN_assg (threeac-gen.c:506)
+==7242==    by 0x408283: GEN_stmt (threeac-gen.c:435)
+==7242==    by 0x407501: GEN_node (threeac-gen.c:108)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242== 
+==7242== 112 bytes in 2 blocks are still reachable in loss record 16 of 30
+==7242==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x405380: zalloc (util.c:21)
+==7242==    by 0x403E8B: SymTabInsert (symbol-table.c:202)
+==7242==    by 0x407234: newtemp (threeac-gen.c:18)
+==7242==    by 0x407683: GEN_const (threeac-gen.c:186)
+==7242==    by 0x4075B9: GEN_expr (threeac-gen.c:132)
+==7242==    by 0x407B5F: GEN_binaryOp (threeac-gen.c:323)
+==7242==    by 0x407608: GEN_expr (threeac-gen.c:152)
+==7242==    by 0x40831A: GEN_assg (threeac-gen.c:506)
+==7242==    by 0x408283: GEN_stmt (threeac-gen.c:435)
+==7242==    by 0x407501: GEN_node (threeac-gen.c:108)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242== 
+==7242== 112 bytes in 2 blocks are still reachable in loss record 17 of 30
+==7242==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x405380: zalloc (util.c:21)
+==7242==    by 0x403E8B: SymTabInsert (symbol-table.c:202)
+==7242==    by 0x407234: newtemp (threeac-gen.c:18)
+==7242==    by 0x407B69: GEN_binaryOp (threeac-gen.c:324)
+==7242==    by 0x407608: GEN_expr (threeac-gen.c:152)
+==7242==    by 0x40831A: GEN_assg (threeac-gen.c:506)
+==7242==    by 0x408283: GEN_stmt (threeac-gen.c:435)
+==7242==    by 0x407501: GEN_node (threeac-gen.c:108)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242== 
+==7242== 128 bytes in 2 blocks are still reachable in loss record 18 of 30
+==7242==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x4071F8: newtemp (threeac-gen.c:15)
+==7242==    by 0x407683: GEN_const (threeac-gen.c:186)
+==7242==    by 0x4075B9: GEN_expr (threeac-gen.c:132)
+==7242==    by 0x40831A: GEN_assg (threeac-gen.c:506)
+==7242==    by 0x408283: GEN_stmt (threeac-gen.c:435)
+==7242==    by 0x407501: GEN_node (threeac-gen.c:108)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242== 
+==7242== 128 bytes in 2 blocks are still reachable in loss record 19 of 30
+==7242==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x407273: newinstr (threeac-gen.c:24)
+==7242==    by 0x407718: GEN_const (threeac-gen.c:192)
+==7242==    by 0x4075B9: GEN_expr (threeac-gen.c:132)
+==7242==    by 0x40831A: GEN_assg (threeac-gen.c:506)
+==7242==    by 0x408283: GEN_stmt (threeac-gen.c:435)
+==7242==    by 0x407501: GEN_node (threeac-gen.c:108)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242== 
+==7242== 128 bytes in 2 blocks are still reachable in loss record 20 of 30
+==7242==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x407273: newinstr (threeac-gen.c:24)
+==7242==    by 0x4083CC: GEN_assg (threeac-gen.c:509)
+==7242==    by 0x408283: GEN_stmt (threeac-gen.c:435)
+==7242==    by 0x407501: GEN_node (threeac-gen.c:108)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x40740C: gen3ac (threeac-gen.c:59)
+==7242==    by 0x40862A: genCode (mips-gen.c:30)
+==7242== 
+==7242== 128 bytes in 2 blocks are still reachable in loss record 21 of 30
+==7242==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x4071F8: newtemp (threeac-gen.c:15)
+==7242==    by 0x407683: GEN_const (threeac-gen.c:186)
+==7242==    by 0x4075B9: GEN_expr (threeac-gen.c:132)
+==7242==    by 0x407B5F: GEN_binaryOp (threeac-gen.c:323)
+==7242==    by 0x407608: GEN_expr (threeac-gen.c:152)
+==7242==    by 0x40831A: GEN_assg (threeac-gen.c:506)
+==7242==    by 0x408283: GEN_stmt (threeac-gen.c:435)
+==7242==    by 0x407501: GEN_node (threeac-gen.c:108)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242== 
+==7242== 128 bytes in 2 blocks are still reachable in loss record 22 of 30
+==7242==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x407273: newinstr (threeac-gen.c:24)
+==7242==    by 0x407718: GEN_const (threeac-gen.c:192)
+==7242==    by 0x4075B9: GEN_expr (threeac-gen.c:132)
+==7242==    by 0x407B5F: GEN_binaryOp (threeac-gen.c:323)
+==7242==    by 0x407608: GEN_expr (threeac-gen.c:152)
+==7242==    by 0x40831A: GEN_assg (threeac-gen.c:506)
+==7242==    by 0x408283: GEN_stmt (threeac-gen.c:435)
+==7242==    by 0x407501: GEN_node (threeac-gen.c:108)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242== 
+==7242== 128 bytes in 2 blocks are still reachable in loss record 23 of 30
+==7242==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x4071F8: newtemp (threeac-gen.c:15)
+==7242==    by 0x407B69: GEN_binaryOp (threeac-gen.c:324)
+==7242==    by 0x407608: GEN_expr (threeac-gen.c:152)
+==7242==    by 0x40831A: GEN_assg (threeac-gen.c:506)
+==7242==    by 0x408283: GEN_stmt (threeac-gen.c:435)
+==7242==    by 0x407501: GEN_node (threeac-gen.c:108)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242== 
+==7242== 128 bytes in 2 blocks are still reachable in loss record 24 of 30
+==7242==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x407273: newinstr (threeac-gen.c:24)
+==7242==    by 0x407C51: GEN_binaryOp (threeac-gen.c:328)
+==7242==    by 0x407608: GEN_expr (threeac-gen.c:152)
+==7242==    by 0x40831A: GEN_assg (threeac-gen.c:506)
+==7242==    by 0x408283: GEN_stmt (threeac-gen.c:435)
+==7242==    by 0x407501: GEN_node (threeac-gen.c:108)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242== 
+==7242== 128 bytes in 2 blocks are still reachable in loss record 25 of 30
+==7242==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x407273: newinstr (threeac-gen.c:24)
+==7242==    by 0x4083CC: GEN_assg (threeac-gen.c:509)
+==7242==    by 0x408283: GEN_stmt (threeac-gen.c:435)
+==7242==    by 0x407501: GEN_node (threeac-gen.c:108)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x40740C: gen3ac (threeac-gen.c:59)
+==7242== 
+==7242== 224 bytes in 4 blocks are still reachable in loss record 26 of 30
+==7242==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x405380: zalloc (util.c:21)
+==7242==    by 0x404B95: mkConstNode (syntax-tree.c:378)
+==7242==    by 0x406575: yyparse (parser.y:335)
+==7242==    by 0x403108: main (main.c:14)
+==7242== 
+==7242== 224 bytes in 4 blocks are still reachable in loss record 27 of 30
+==7242==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x405380: zalloc (util.c:21)
+==7242==    by 0x404CBA: mkExprNode (syntax-tree.c:433)
+==7242==    by 0x40624A: yyparse (parser.y:307)
+==7242==    by 0x403108: main (main.c:14)
+==7242== 
+==7242== 336 bytes in 6 blocks are still reachable in loss record 28 of 30
+==7242==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x405380: zalloc (util.c:21)
+==7242==    by 0x404C4D: mkSymTabRefNode (syntax-tree.c:413)
+==7242==    by 0x406BF1: yyparse (parser.y:469)
+==7242==    by 0x403108: main (main.c:14)
+==7242== 
+==7242== 1,064 bytes in 19 blocks are still reachable in loss record 29 of 30
+==7242==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x405380: zalloc (util.c:21)
+==7242==    by 0x404DD9: mkListNode (syntax-tree.c:489)
+==7242==    by 0x405CE4: yyparse (parser.y:198)
+==7242==    by 0x403108: main (main.c:14)
+==7242== 
+==7242== 16,386 bytes in 1 blocks are still reachable in loss record 30 of 30
+==7242==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7242==    by 0x403027: yyalloc (lex.yy.c:1961)
+==7242==    by 0x40270E: yy_create_buffer (lex.yy.c:1505)
+==7242==    by 0x4013F2: yylex (lex.yy.c:728)
+==7242==    by 0x405777: yyparse (y.tab.c:1346)
+==7242==    by 0x403108: main (main.c:14)
+==7242== 
+==7242== LEAK SUMMARY:
+==7242==    definitely lost: 10 bytes in 5 blocks
+==7242==    indirectly lost: 0 bytes in 0 blocks
+==7242==      possibly lost: 0 bytes in 0 blocks
+==7242==    still reachable: 20,356 bytes in 75 blocks
+==7242==         suppressed: 0 bytes in 0 blocks
+==7242== 
+==7242== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==7242== 
+==7242== 1 errors in context 1 of 2:
+==7242== Invalid read of size 4
+==7242==    at 0x4074A6: GEN_node (threeac-gen.c:70)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==    by 0x407521: GEN_node (threeac-gen.c:114)
+==7242==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7242== 
+==7242== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)

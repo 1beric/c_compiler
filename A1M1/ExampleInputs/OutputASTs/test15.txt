@@ -1,0 +1,52 @@
+@@FUN: foo
+@@BODY:
+0:    {
+1:      IF
+2:          >(
+3:            arrayRef(id(name=x, scope=L),
+4:                     intcon(0);
+3:                    )
+3:            intcon(0);
+2:          )
+1:        then:
+2:          RETURN:
+3:            CALL: callee=foo
+3:              args:
+4:                {
+5:                  id(name=a, scope=G);
+5:                  str(hello world\n);
+4:                }
+1:        else:
+2:          {
+3:            ASSG:
+3:              Lhs:
+4:                arrayRef(id(name=y, scope=L),
+5:                         intcon(0);
+4:                        )
+3:              Rhs:
+4:                charcon(98);
+3:            RETURN:
+4:              +(
+5:                arrayRef(id(name=x, scope=L),
+6:                         CALL: callee=foo
+6:                           args:
+7:                             {
+8:                               id(name=a, scope=G);
+8:                               id(name=y, scope=L);
+7:                             }
+5:                        )
+5:                arrayRef(id(name=y, scope=L),
+6:                         CALL: callee=foo
+6:                           args:
+7:                             {
+8:                               id(name=a, scope=G);
+8:                               str(hi\n);
+7:                             }
+5:                        )
+4:              )
+2:          }
+1:      ENDIF
+1:      RETURN:
+2:        -null-
+0:    }
+-----

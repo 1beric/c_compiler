@@ -1,0 +1,4 @@
+ERROR [line 3]: Multiple prototypes/definitions for function bar
+ERROR [line 5]: Multiple prototypes/definitions for function ggg
+ERROR [line 7]: Multiple prototypes/definitions for function hhh
+ERROR [line 9]: Multiple prototypes/definitions for function iii

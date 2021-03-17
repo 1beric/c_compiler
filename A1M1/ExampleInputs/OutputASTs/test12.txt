@@ -1,0 +1,1060 @@
+@@FUN: bar
+@@BODY:
+0:    {
+1:      RETURN:
+2:        -null-
+0:    }
+-----
+@@FUN: foo
+@@BODY:
+0:    {
+1:      ASSG:
+1:        Lhs:
+2:          id(name=x, scope=G);
+1:        Rhs:
+2:          +(
+3:            +(
+4:              +(
+5:                +(
+6:                  +(
+7:                    +(
+8:                      +(
+9:                        +(
+10:                          +(
+11:                            +(
+12:                              +(
+13:                                +(
+14:                                  +(
+15:                                    +(
+16:                                      +(
+17:                                        +(
+18:                                          +(
+19:                                            +(
+20:                                              +(
+21:                                                +(
+22:                                                  +(
+23:                                                    +(
+24:                                                      +(
+25:                                                        +(
+26:                                                          +(
+27:                                                            +(
+28:                                                              +(
+29:                                                                +(
+30:                                                                  +(
+31:                                                                    +(
+32:                                                                      id(name=x, scope=G);
+32:                                                                      /(
+33:                                                                        *(
+34:                                                                          id(name=y, scope=G);
+34:                                                                          id(name=z, scope=L);
+33:                                                                        )
+33:                                                                        intcon(2);
+32:                                                                      )
+31:                                                                    )
+31:                                                                    id(name=x, scope=G);
+30:                                                                  )
+30:                                                                  /(
+31:                                                                    *(
+32:                                                                      id(name=y, scope=G);
+32:                                                                      id(name=z, scope=L);
+31:                                                                    )
+31:                                                                    intcon(2);
+30:                                                                  )
+29:                                                                )
+29:                                                                id(name=x, scope=G);
+28:                                                              )
+28:                                                              /(
+29:                                                                *(
+30:                                                                  id(name=y, scope=G);
+30:                                                                  id(name=z, scope=L);
+29:                                                                )
+29:                                                                intcon(2);
+28:                                                              )
+27:                                                            )
+27:                                                            id(name=x, scope=G);
+26:                                                          )
+26:                                                          /(
+27:                                                            *(
+28:                                                              id(name=y, scope=G);
+28:                                                              id(name=z, scope=L);
+27:                                                            )
+27:                                                            intcon(2);
+26:                                                          )
+25:                                                        )
+25:                                                        id(name=x, scope=G);
+24:                                                      )
+24:                                                      /(
+25:                                                        *(
+26:                                                          id(name=y, scope=G);
+26:                                                          id(name=z, scope=L);
+25:                                                        )
+25:                                                        intcon(2);
+24:                                                      )
+23:                                                    )
+23:                                                    id(name=x, scope=G);
+22:                                                  )
+22:                                                  /(
+23:                                                    *(
+24:                                                      id(name=y, scope=G);
+24:                                                      id(name=z, scope=L);
+23:                                                    )
+23:                                                    intcon(2);
+22:                                                  )
+21:                                                )
+21:                                                id(name=x, scope=G);
+20:                                              )
+20:                                              /(
+21:                                                *(
+22:                                                  id(name=y, scope=G);
+22:                                                  id(name=z, scope=L);
+21:                                                )
+21:                                                intcon(2);
+20:                                              )
+19:                                            )
+19:                                            id(name=x, scope=G);
+18:                                          )
+18:                                          /(
+19:                                            *(
+20:                                              id(name=y, scope=G);
+20:                                              id(name=z, scope=L);
+19:                                            )
+19:                                            intcon(2);
+18:                                          )
+17:                                        )
+17:                                        id(name=x, scope=G);
+16:                                      )
+16:                                      /(
+17:                                        *(
+18:                                          id(name=y, scope=G);
+18:                                          id(name=z, scope=L);
+17:                                        )
+17:                                        intcon(2);
+16:                                      )
+15:                                    )
+15:                                    id(name=x, scope=G);
+14:                                  )
+14:                                  /(
+15:                                    *(
+16:                                      id(name=y, scope=G);
+16:                                      id(name=z, scope=L);
+15:                                    )
+15:                                    intcon(2);
+14:                                  )
+13:                                )
+13:                                id(name=x, scope=G);
+12:                              )
+12:                              /(
+13:                                *(
+14:                                  id(name=y, scope=G);
+14:                                  id(name=z, scope=L);
+13:                                )
+13:                                intcon(2);
+12:                              )
+11:                            )
+11:                            id(name=x, scope=G);
+10:                          )
+10:                          /(
+11:                            *(
+12:                              id(name=y, scope=G);
+12:                              id(name=z, scope=L);
+11:                            )
+11:                            intcon(2);
+10:                          )
+9:                        )
+9:                        id(name=x, scope=G);
+8:                      )
+8:                      /(
+9:                        *(
+10:                          id(name=y, scope=G);
+10:                          id(name=z, scope=L);
+9:                        )
+9:                        intcon(2);
+8:                      )
+7:                    )
+7:                    id(name=x, scope=G);
+6:                  )
+6:                  /(
+7:                    *(
+8:                      id(name=y, scope=G);
+8:                      id(name=z, scope=L);
+7:                    )
+7:                    intcon(2);
+6:                  )
+5:                )
+5:                id(name=x, scope=G);
+4:              )
+4:              /(
+5:                *(
+6:                  id(name=y, scope=G);
+6:                  id(name=z, scope=L);
+5:                )
+5:                intcon(2);
+4:              )
+3:            )
+3:            id(name=z, scope=L);
+2:          )
+1:      ASSG:
+1:        Lhs:
+2:          arrayRef(id(name=u, scope=L),
+3:                   +(
+4:                     +(
+5:                       +(
+6:                         +(
+7:                           +(
+8:                             +(
+9:                               +(
+10:                                 +(
+11:                                   +(
+12:                                     +(
+13:                                       +(
+14:                                         +(
+15:                                           +(
+16:                                             +(
+17:                                               +(
+18:                                                 +(
+19:                                                   +(
+20:                                                     +(
+21:                                                       +(
+22:                                                         +(
+23:                                                           +(
+24:                                                             +(
+25:                                                               +(
+26:                                                                 +(
+27:                                                                   +(
+28:                                                                     +(
+29:                                                                       +(
+30:                                                                         +(
+31:                                                                           +(
+32:                                                                             +(
+33:                                                                               id(name=x, scope=G);
+33:                                                                               /(
+34:                                                                                 *(
+35:                                                                                   id(name=y, scope=G);
+35:                                                                                   id(name=z, scope=L);
+34:                                                                                 )
+34:                                                                                 intcon(2);
+33:                                                                               )
+32:                                                                             )
+32:                                                                             id(name=x, scope=G);
+31:                                                                           )
+31:                                                                           /(
+32:                                                                             *(
+33:                                                                               id(name=y, scope=G);
+33:                                                                               id(name=z, scope=L);
+32:                                                                             )
+32:                                                                             intcon(2);
+31:                                                                           )
+30:                                                                         )
+30:                                                                         id(name=x, scope=G);
+29:                                                                       )
+29:                                                                       /(
+30:                                                                         *(
+31:                                                                           id(name=y, scope=G);
+31:                                                                           id(name=z, scope=L);
+30:                                                                         )
+30:                                                                         intcon(2);
+29:                                                                       )
+28:                                                                     )
+28:                                                                     id(name=x, scope=G);
+27:                                                                   )
+27:                                                                   /(
+28:                                                                     *(
+29:                                                                       id(name=y, scope=G);
+29:                                                                       id(name=z, scope=L);
+28:                                                                     )
+28:                                                                     intcon(2);
+27:                                                                   )
+26:                                                                 )
+26:                                                                 id(name=x, scope=G);
+25:                                                               )
+25:                                                               /(
+26:                                                                 *(
+27:                                                                   id(name=y, scope=G);
+27:                                                                   id(name=z, scope=L);
+26:                                                                 )
+26:                                                                 intcon(2);
+25:                                                               )
+24:                                                             )
+24:                                                             id(name=x, scope=G);
+23:                                                           )
+23:                                                           /(
+24:                                                             *(
+25:                                                               id(name=y, scope=G);
+25:                                                               id(name=z, scope=L);
+24:                                                             )
+24:                                                             intcon(2);
+23:                                                           )
+22:                                                         )
+22:                                                         id(name=x, scope=G);
+21:                                                       )
+21:                                                       /(
+22:                                                         *(
+23:                                                           id(name=y, scope=G);
+23:                                                           id(name=z, scope=L);
+22:                                                         )
+22:                                                         intcon(2);
+21:                                                       )
+20:                                                     )
+20:                                                     id(name=x, scope=G);
+19:                                                   )
+19:                                                   /(
+20:                                                     *(
+21:                                                       id(name=y, scope=G);
+21:                                                       id(name=z, scope=L);
+20:                                                     )
+20:                                                     intcon(2);
+19:                                                   )
+18:                                                 )
+18:                                                 id(name=x, scope=G);
+17:                                               )
+17:                                               /(
+18:                                                 *(
+19:                                                   id(name=y, scope=G);
+19:                                                   id(name=z, scope=L);
+18:                                                 )
+18:                                                 intcon(2);
+17:                                               )
+16:                                             )
+16:                                             id(name=x, scope=G);
+15:                                           )
+15:                                           /(
+16:                                             *(
+17:                                               id(name=y, scope=G);
+17:                                               id(name=z, scope=L);
+16:                                             )
+16:                                             intcon(2);
+15:                                           )
+14:                                         )
+14:                                         id(name=x, scope=G);
+13:                                       )
+13:                                       /(
+14:                                         *(
+15:                                           id(name=y, scope=G);
+15:                                           id(name=z, scope=L);
+14:                                         )
+14:                                         intcon(2);
+13:                                       )
+12:                                     )
+12:                                     id(name=x, scope=G);
+11:                                   )
+11:                                   /(
+12:                                     *(
+13:                                       id(name=y, scope=G);
+13:                                       id(name=z, scope=L);
+12:                                     )
+12:                                     intcon(2);
+11:                                   )
+10:                                 )
+10:                                 id(name=x, scope=G);
+9:                               )
+9:                               /(
+10:                                 *(
+11:                                   id(name=y, scope=G);
+11:                                   id(name=z, scope=L);
+10:                                 )
+10:                                 intcon(2);
+9:                               )
+8:                             )
+8:                             id(name=x, scope=G);
+7:                           )
+7:                           /(
+8:                             *(
+9:                               id(name=y, scope=G);
+9:                               id(name=z, scope=L);
+8:                             )
+8:                             intcon(2);
+7:                           )
+6:                         )
+6:                         id(name=x, scope=G);
+5:                       )
+5:                       /(
+6:                         *(
+7:                           id(name=y, scope=G);
+7:                           id(name=z, scope=L);
+6:                         )
+6:                         intcon(2);
+5:                       )
+4:                     )
+4:                     id(name=z, scope=L);
+3:                   )
+2:                  )
+1:        Rhs:
+2:          intcon(1);
+1:      ASSG:
+1:        Lhs:
+2:          arrayRef(id(name=u, scope=L),
+3:                   +(
+4:                     +(
+5:                       +(
+6:                         +(
+7:                           +(
+8:                             +(
+9:                               +(
+10:                                 +(
+11:                                   +(
+12:                                     +(
+13:                                       +(
+14:                                         +(
+15:                                           +(
+16:                                             +(
+17:                                               +(
+18:                                                 +(
+19:                                                   +(
+20:                                                     +(
+21:                                                       +(
+22:                                                         +(
+23:                                                           +(
+24:                                                             +(
+25:                                                               +(
+26:                                                                 +(
+27:                                                                   +(
+28:                                                                     +(
+29:                                                                       +(
+30:                                                                         +(
+31:                                                                           +(
+32:                                                                             +(
+33:                                                                               id(name=x, scope=G);
+33:                                                                               /(
+34:                                                                                 *(
+35:                                                                                   id(name=y, scope=G);
+35:                                                                                   id(name=z, scope=L);
+34:                                                                                 )
+34:                                                                                 intcon(2);
+33:                                                                               )
+32:                                                                             )
+32:                                                                             id(name=x, scope=G);
+31:                                                                           )
+31:                                                                           /(
+32:                                                                             *(
+33:                                                                               id(name=y, scope=G);
+33:                                                                               id(name=z, scope=L);
+32:                                                                             )
+32:                                                                             intcon(2);
+31:                                                                           )
+30:                                                                         )
+30:                                                                         id(name=x, scope=G);
+29:                                                                       )
+29:                                                                       /(
+30:                                                                         *(
+31:                                                                           id(name=y, scope=G);
+31:                                                                           id(name=z, scope=L);
+30:                                                                         )
+30:                                                                         intcon(2);
+29:                                                                       )
+28:                                                                     )
+28:                                                                     id(name=x, scope=G);
+27:                                                                   )
+27:                                                                   /(
+28:                                                                     *(
+29:                                                                       id(name=y, scope=G);
+29:                                                                       id(name=z, scope=L);
+28:                                                                     )
+28:                                                                     intcon(2);
+27:                                                                   )
+26:                                                                 )
+26:                                                                 id(name=x, scope=G);
+25:                                                               )
+25:                                                               /(
+26:                                                                 *(
+27:                                                                   id(name=y, scope=G);
+27:                                                                   id(name=z, scope=L);
+26:                                                                 )
+26:                                                                 intcon(2);
+25:                                                               )
+24:                                                             )
+24:                                                             id(name=x, scope=G);
+23:                                                           )
+23:                                                           /(
+24:                                                             *(
+25:                                                               id(name=y, scope=G);
+25:                                                               id(name=z, scope=L);
+24:                                                             )
+24:                                                             intcon(2);
+23:                                                           )
+22:                                                         )
+22:                                                         id(name=x, scope=G);
+21:                                                       )
+21:                                                       /(
+22:                                                         *(
+23:                                                           id(name=y, scope=G);
+23:                                                           id(name=z, scope=L);
+22:                                                         )
+22:                                                         intcon(2);
+21:                                                       )
+20:                                                     )
+20:                                                     id(name=x, scope=G);
+19:                                                   )
+19:                                                   /(
+20:                                                     *(
+21:                                                       id(name=y, scope=G);
+21:                                                       id(name=z, scope=L);
+20:                                                     )
+20:                                                     intcon(2);
+19:                                                   )
+18:                                                 )
+18:                                                 id(name=x, scope=G);
+17:                                               )
+17:                                               /(
+18:                                                 *(
+19:                                                   id(name=y, scope=G);
+19:                                                   id(name=z, scope=L);
+18:                                                 )
+18:                                                 intcon(2);
+17:                                               )
+16:                                             )
+16:                                             id(name=x, scope=G);
+15:                                           )
+15:                                           /(
+16:                                             *(
+17:                                               id(name=y, scope=G);
+17:                                               id(name=z, scope=L);
+16:                                             )
+16:                                             intcon(2);
+15:                                           )
+14:                                         )
+14:                                         id(name=x, scope=G);
+13:                                       )
+13:                                       /(
+14:                                         *(
+15:                                           id(name=y, scope=G);
+15:                                           id(name=z, scope=L);
+14:                                         )
+14:                                         intcon(2);
+13:                                       )
+12:                                     )
+12:                                     id(name=x, scope=G);
+11:                                   )
+11:                                   /(
+12:                                     *(
+13:                                       id(name=y, scope=G);
+13:                                       id(name=z, scope=L);
+12:                                     )
+12:                                     intcon(2);
+11:                                   )
+10:                                 )
+10:                                 id(name=x, scope=G);
+9:                               )
+9:                               /(
+10:                                 *(
+11:                                   id(name=y, scope=G);
+11:                                   id(name=z, scope=L);
+10:                                 )
+10:                                 intcon(2);
+9:                               )
+8:                             )
+8:                             id(name=x, scope=G);
+7:                           )
+7:                           /(
+8:                             *(
+9:                               id(name=y, scope=G);
+9:                               id(name=z, scope=L);
+8:                             )
+8:                             intcon(2);
+7:                           )
+6:                         )
+6:                         id(name=x, scope=G);
+5:                       )
+5:                       /(
+6:                         *(
+7:                           id(name=y, scope=G);
+7:                           id(name=z, scope=L);
+6:                         )
+6:                         intcon(2);
+5:                       )
+4:                     )
+4:                     id(name=z, scope=L);
+3:                   )
+2:                  )
+1:        Rhs:
+2:          +(
+3:            arrayRef(id(name=u, scope=L),
+4:                     +(
+5:                       +(
+6:                         +(
+7:                           +(
+8:                             +(
+9:                               +(
+10:                                 +(
+11:                                   +(
+12:                                     +(
+13:                                       +(
+14:                                         +(
+15:                                           +(
+16:                                             +(
+17:                                               +(
+18:                                                 +(
+19:                                                   +(
+20:                                                     +(
+21:                                                       +(
+22:                                                         +(
+23:                                                           +(
+24:                                                             +(
+25:                                                               +(
+26:                                                                 +(
+27:                                                                   +(
+28:                                                                     +(
+29:                                                                       +(
+30:                                                                         +(
+31:                                                                           +(
+32:                                                                             +(
+33:                                                                               +(
+34:                                                                                 id(name=x, scope=G);
+34:                                                                                 /(
+35:                                                                                   *(
+36:                                                                                     id(name=y, scope=G);
+36:                                                                                     id(name=z, scope=L);
+35:                                                                                   )
+35:                                                                                   intcon(2);
+34:                                                                                 )
+33:                                                                               )
+33:                                                                               id(name=x, scope=G);
+32:                                                                             )
+32:                                                                             /(
+33:                                                                               *(
+34:                                                                                 id(name=y, scope=G);
+34:                                                                                 id(name=z, scope=L);
+33:                                                                               )
+33:                                                                               intcon(2);
+32:                                                                             )
+31:                                                                           )
+31:                                                                           id(name=x, scope=G);
+30:                                                                         )
+30:                                                                         /(
+31:                                                                           *(
+32:                                                                             id(name=y, scope=G);
+32:                                                                             id(name=z, scope=L);
+31:                                                                           )
+31:                                                                           intcon(2);
+30:                                                                         )
+29:                                                                       )
+29:                                                                       id(name=x, scope=G);
+28:                                                                     )
+28:                                                                     /(
+29:                                                                       *(
+30:                                                                         id(name=y, scope=G);
+30:                                                                         id(name=z, scope=L);
+29:                                                                       )
+29:                                                                       intcon(2);
+28:                                                                     )
+27:                                                                   )
+27:                                                                   id(name=x, scope=G);
+26:                                                                 )
+26:                                                                 /(
+27:                                                                   *(
+28:                                                                     id(name=y, scope=G);
+28:                                                                     id(name=z, scope=L);
+27:                                                                   )
+27:                                                                   intcon(2);
+26:                                                                 )
+25:                                                               )
+25:                                                               id(name=x, scope=G);
+24:                                                             )
+24:                                                             /(
+25:                                                               *(
+26:                                                                 id(name=y, scope=G);
+26:                                                                 id(name=z, scope=L);
+25:                                                               )
+25:                                                               intcon(2);
+24:                                                             )
+23:                                                           )
+23:                                                           id(name=x, scope=G);
+22:                                                         )
+22:                                                         /(
+23:                                                           *(
+24:                                                             id(name=y, scope=G);
+24:                                                             id(name=z, scope=L);
+23:                                                           )
+23:                                                           intcon(2);
+22:                                                         )
+21:                                                       )
+21:                                                       id(name=x, scope=G);
+20:                                                     )
+20:                                                     /(
+21:                                                       *(
+22:                                                         id(name=y, scope=G);
+22:                                                         id(name=z, scope=L);
+21:                                                       )
+21:                                                       intcon(2);
+20:                                                     )
+19:                                                   )
+19:                                                   id(name=x, scope=G);
+18:                                                 )
+18:                                                 /(
+19:                                                   *(
+20:                                                     id(name=y, scope=G);
+20:                                                     id(name=z, scope=L);
+19:                                                   )
+19:                                                   intcon(2);
+18:                                                 )
+17:                                               )
+17:                                               id(name=x, scope=G);
+16:                                             )
+16:                                             /(
+17:                                               *(
+18:                                                 id(name=y, scope=G);
+18:                                                 id(name=z, scope=L);
+17:                                               )
+17:                                               intcon(2);
+16:                                             )
+15:                                           )
+15:                                           id(name=x, scope=G);
+14:                                         )
+14:                                         /(
+15:                                           *(
+16:                                             id(name=y, scope=G);
+16:                                             id(name=z, scope=L);
+15:                                           )
+15:                                           intcon(2);
+14:                                         )
+13:                                       )
+13:                                       id(name=x, scope=G);
+12:                                     )
+12:                                     /(
+13:                                       *(
+14:                                         id(name=y, scope=G);
+14:                                         id(name=z, scope=L);
+13:                                       )
+13:                                       intcon(2);
+12:                                     )
+11:                                   )
+11:                                   id(name=x, scope=G);
+10:                                 )
+10:                                 /(
+11:                                   *(
+12:                                     id(name=y, scope=G);
+12:                                     id(name=z, scope=L);
+11:                                   )
+11:                                   intcon(2);
+10:                                 )
+9:                               )
+9:                               id(name=x, scope=G);
+8:                             )
+8:                             /(
+9:                               *(
+10:                                 id(name=y, scope=G);
+10:                                 id(name=z, scope=L);
+9:                               )
+9:                               intcon(2);
+8:                             )
+7:                           )
+7:                           id(name=x, scope=G);
+6:                         )
+6:                         /(
+7:                           *(
+8:                             id(name=y, scope=G);
+8:                             id(name=z, scope=L);
+7:                           )
+7:                           intcon(2);
+6:                         )
+5:                       )
+5:                       id(name=z, scope=L);
+4:                     )
+3:                    )
+3:            intcon(1);
+2:          )
+1:      ASSG:
+1:        Lhs:
+2:          arrayRef(id(name=u, scope=L),
+3:                   arrayRef(id(name=u, scope=L),
+4:                            arrayRef(id(name=u, scope=L),
+5:                                     arrayRef(id(name=u, scope=L),
+6:                                              arrayRef(id(name=u, scope=L),
+7:                                                       arrayRef(id(name=u, scope=L),
+8:                                                                arrayRef(id(name=u, scope=L),
+9:                                                                         arrayRef(id(name=u, scope=L),
+10:                                                                                  arrayRef(id(name=u, scope=L),
+11:                                                                                           arrayRef(id(name=u, scope=L),
+12:                                                                                                    intcon(0);
+11:                                                                                                   )
+10:                                                                                          )
+9:                                                                                 )
+8:                                                                        )
+7:                                                               )
+6:                                                      )
+5:                                             )
+4:                                    )
+3:                           )
+2:                  )
+1:        Rhs:
+2:          intcon(0);
+1:      ASSG:
+1:        Lhs:
+2:          arrayRef(id(name=u, scope=L),
+3:                   arrayRef(id(name=u, scope=L),
+4:                            arrayRef(id(name=u, scope=L),
+5:                                     arrayRef(id(name=u, scope=L),
+6:                                              arrayRef(id(name=u, scope=L),
+7:                                                       arrayRef(id(name=u, scope=L),
+8:                                                                arrayRef(id(name=u, scope=L),
+9:                                                                         arrayRef(id(name=u, scope=L),
+10:                                                                                  arrayRef(id(name=u, scope=L),
+11:                                                                                           arrayRef(id(name=u, scope=L),
+12:                                                                                                    intcon(0);
+11:                                                                                                   )
+10:                                                                                          )
+9:                                                                                 )
+8:                                                                        )
+7:                                                               )
+6:                                                      )
+5:                                             )
+4:                                    )
+3:                           )
+2:                  )
+1:        Rhs:
+2:          +(
+3:            +(
+4:              arrayRef(id(name=u, scope=L),
+5:                       arrayRef(id(name=u, scope=L),
+6:                                arrayRef(id(name=u, scope=L),
+7:                                         arrayRef(id(name=u, scope=L),
+8:                                                  arrayRef(id(name=u, scope=L),
+9:                                                           arrayRef(id(name=u, scope=L),
+10:                                                                    arrayRef(id(name=u, scope=L),
+11:                                                                             arrayRef(id(name=u, scope=L),
+12:                                                                                      arrayRef(id(name=u, scope=L),
+13:                                                                                               arrayRef(id(name=u, scope=L),
+14:                                                                                                        intcon(0);
+13:                                                                                                       )
+12:                                                                                              )
+11:                                                                                     )
+10:                                                                            )
+9:                                                                   )
+8:                                                          )
+7:                                                 )
+6:                                        )
+5:                               )
+4:                      )
+4:              /(
+5:                *(
+6:                  arrayRef(id(name=u, scope=L),
+7:                           arrayRef(id(name=u, scope=L),
+8:                                    arrayRef(id(name=u, scope=L),
+9:                                             arrayRef(id(name=u, scope=L),
+10:                                                      arrayRef(id(name=u, scope=L),
+11:                                                               arrayRef(id(name=u, scope=L),
+12:                                                                        arrayRef(id(name=u, scope=L),
+13:                                                                                 arrayRef(id(name=u, scope=L),
+14:                                                                                          arrayRef(id(name=u, scope=L),
+15:                                                                                                   arrayRef(id(name=u, scope=L),
+16:                                                                                                            intcon(0);
+15:                                                                                                           )
+14:                                                                                                  )
+13:                                                                                         )
+12:                                                                                )
+11:                                                                       )
+10:                                                              )
+9:                                                     )
+8:                                            )
+7:                                   )
+6:                          )
+6:                  arrayRef(id(name=u, scope=L),
+7:                           arrayRef(id(name=u, scope=L),
+8:                                    arrayRef(id(name=u, scope=L),
+9:                                             arrayRef(id(name=u, scope=L),
+10:                                                      arrayRef(id(name=u, scope=L),
+11:                                                               arrayRef(id(name=u, scope=L),
+12:                                                                        arrayRef(id(name=u, scope=L),
+13:                                                                                 arrayRef(id(name=u, scope=L),
+14:                                                                                          arrayRef(id(name=u, scope=L),
+15:                                                                                                   arrayRef(id(name=u, scope=L),
+16:                                                                                                            intcon(0);
+15:                                                                                                           )
+14:                                                                                                  )
+13:                                                                                         )
+12:                                                                                )
+11:                                                                       )
+10:                                                              )
+9:                                                     )
+8:                                            )
+7:                                   )
+6:                          )
+5:                )
+5:                arrayRef(id(name=u, scope=L),
+6:                         arrayRef(id(name=u, scope=L),
+7:                                  arrayRef(id(name=u, scope=L),
+8:                                           arrayRef(id(name=u, scope=L),
+9:                                                    arrayRef(id(name=u, scope=L),
+10:                                                             arrayRef(id(name=u, scope=L),
+11:                                                                      arrayRef(id(name=u, scope=L),
+12:                                                                               arrayRef(id(name=u, scope=L),
+13:                                                                                        arrayRef(id(name=u, scope=L),
+14:                                                                                                 arrayRef(id(name=u, scope=L),
+15:                                                                                                          intcon(0);
+14:                                                                                                         )
+13:                                                                                                )
+12:                                                                                       )
+11:                                                                              )
+10:                                                                     )
+9:                                                            )
+8:                                                   )
+7:                                          )
+6:                                 )
+5:                        )
+4:              )
+3:            )
+3:            *(
+4:              arrayRef(id(name=u, scope=L),
+5:                       arrayRef(id(name=u, scope=L),
+6:                                arrayRef(id(name=u, scope=L),
+7:                                         arrayRef(id(name=u, scope=L),
+8:                                                  arrayRef(id(name=u, scope=L),
+9:                                                           arrayRef(id(name=u, scope=L),
+10:                                                                    arrayRef(id(name=u, scope=L),
+11:                                                                             arrayRef(id(name=u, scope=L),
+12:                                                                                      arrayRef(id(name=u, scope=L),
+13:                                                                                               arrayRef(id(name=u, scope=L),
+14:                                                                                                        intcon(0);
+13:                                                                                                       )
+12:                                                                                              )
+11:                                                                                     )
+10:                                                                            )
+9:                                                                   )
+8:                                                          )
+7:                                                 )
+6:                                        )
+5:                               )
+4:                      )
+4:              intcon(2);
+3:            )
+2:          )
+1:      ASSG:
+1:        Lhs:
+2:          id(name=x, scope=G);
+1:        Rhs:
+2:          CALL: callee=foo
+2:            args:
+3:              {
+4:                CALL: callee=foo
+4:                  args:
+5:                    {
+6:                      CALL: callee=foo
+6:                        args:
+7:                          {
+8:                            CALL: callee=foo
+8:                              args:
+9:                                {
+10:                                  CALL: callee=foo
+10:                                    args:
+11:                                      {
+12:                                        CALL: callee=foo
+12:                                          args:
+13:                                            {
+14:                                              CALL: callee=foo
+14:                                                args:
+15:                                                  {
+16:                                                    CALL: callee=foo
+16:                                                      args:
+17:                                                        {
+18:                                                          CALL: callee=foo
+18:                                                            args:
+19:                                                              {
+20:                                                                CALL: callee=foo
+20:                                                                  args:
+21:                                                                    {
+22:                                                                      intcon(0);
+21:                                                                    }
+19:                                                              }
+17:                                                        }
+15:                                                  }
+13:                                            }
+11:                                      }
+9:                                }
+7:                          }
+5:                    }
+3:              }
+1:      ASSG:
+1:        Lhs:
+2:          arrayRef(id(name=u, scope=L),
+3:                   CALL: callee=foo
+3:                     args:
+4:                       {
+5:                         arrayRef(id(name=u, scope=L),
+6:                                  CALL: callee=foo
+6:                                    args:
+7:                                      {
+8:                                        arrayRef(id(name=u, scope=L),
+9:                                                 CALL: callee=foo
+9:                                                   args:
+10:                                                     {
+11:                                                       arrayRef(id(name=u, scope=L),
+12:                                                                CALL: callee=foo
+12:                                                                  args:
+13:                                                                    {
+14:                                                                      arrayRef(id(name=u, scope=L),
+15:                                                                               CALL: callee=foo
+15:                                                                                 args:
+16:                                                                                   {
+17:                                                                                     arrayRef(id(name=u, scope=L),
+18:                                                                                              CALL: callee=foo
+18:                                                                                                args:
+19:                                                                                                  {
+20:                                                                                                    arrayRef(id(name=u, scope=L),
+21:                                                                                                             CALL: callee=foo
+21:                                                                                                               args:
+22:                                                                                                                 {
+23:                                                                                                                   id(name=x, scope=G);
+22:                                                                                                                 }
+20:                                                                                                            )
+19:                                                                                                  }
+17:                                                                                             )
+16:                                                                                   }
+14:                                                                              )
+13:                                                                    }
+11:                                                               )
+10:                                                     }
+8:                                                )
+7:                                      }
+5:                                 )
+4:                       }
+2:                  )
+1:        Rhs:
+2:          +(
+3:            arrayRef(id(name=u, scope=L),
+4:                     CALL: callee=foo
+4:                       args:
+5:                         {
+6:                           arrayRef(id(name=u, scope=L),
+7:                                    CALL: callee=foo
+7:                                      args:
+8:                                        {
+9:                                          arrayRef(id(name=u, scope=L),
+10:                                                   CALL: callee=foo
+10:                                                     args:
+11:                                                       {
+12:                                                         arrayRef(id(name=u, scope=L),
+13:                                                                  CALL: callee=foo
+13:                                                                    args:
+14:                                                                      {
+15:                                                                        arrayRef(id(name=u, scope=L),
+16:                                                                                 CALL: callee=foo
+16:                                                                                   args:
+17:                                                                                     {
+18:                                                                                       arrayRef(id(name=u, scope=L),
+19:                                                                                                CALL: callee=foo
+19:                                                                                                  args:
+20:                                                                                                    {
+21:                                                                                                      arrayRef(id(name=u, scope=L),
+22:                                                                                                               CALL: callee=foo
+22:                                                                                                                 args:
+23:                                                                                                                   {
+24:                                                                                                                     id(name=x, scope=G);
+23:                                                                                                                   }
+21:                                                                                                              )
+20:                                                                                                    }
+18:                                                                                               )
+17:                                                                                     }
+15:                                                                                )
+14:                                                                      }
+12:                                                                 )
+11:                                                       }
+9:                                                  )
+8:                                        }
+6:                                   )
+5:                         }
+3:                    )
+3:            intcon(1);
+2:          )
+1:      RETURN:
+2:        intcon(0);
+0:    }
+-----

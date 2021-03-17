@@ -1,0 +1,801 @@
+@@FUN: f
+@@BODY:
+0:    {
+1:      FOR
+1:        init:
+2:          -null-
+1:        test:
+2:          -null-
+1:        update:
+2:          -null-
+1:        body:
+2:          -null-
+1:      ENDFOR
+1:      FOR
+1:        init:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              intcon(0);
+1:        test:
+2:          -null-
+1:        update:
+2:          -null-
+1:        body:
+2:          -null-
+1:      ENDFOR
+1:      FOR
+1:        init:
+2:          -null-
+1:        test:
+2:          <(
+3:            id(name=x, scope=L);
+3:            intcon(100);
+2:          )
+1:        update:
+2:          -null-
+1:        body:
+2:          -null-
+1:      ENDFOR
+1:      FOR
+1:        init:
+2:          -null-
+1:        test:
+2:          -null-
+1:        update:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              +(
+4:                id(name=x, scope=L);
+4:                intcon(1);
+3:              )
+1:        body:
+2:          -null-
+1:      ENDFOR
+1:      FOR
+1:        init:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              intcon(0);
+1:        test:
+2:          <(
+3:            id(name=x, scope=L);
+3:            intcon(100);
+2:          )
+1:        update:
+2:          -null-
+1:        body:
+2:          -null-
+1:      ENDFOR
+1:      FOR
+1:        init:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              intcon(0);
+1:        test:
+2:          <(
+3:            id(name=x, scope=L);
+3:            intcon(100);
+2:          )
+1:        update:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              +(
+4:                id(name=x, scope=L);
+4:                intcon(1);
+3:              )
+1:        body:
+2:          -null-
+1:      ENDFOR
+1:      FOR
+1:        init:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              intcon(0);
+1:        test:
+2:          <(
+3:            id(name=x, scope=L);
+3:            intcon(100);
+2:          )
+1:        update:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              +(
+4:                id(name=x, scope=L);
+4:                intcon(1);
+3:              )
+1:        body:
+2:          ASSG:
+2:            Lhs:
+3:              arrayRef(id(name=a, scope=G),
+4:                       id(name=x, scope=L);
+3:                      )
+2:            Rhs:
+3:              +(
+4:                arrayRef(id(name=a, scope=G),
+5:                         id(name=x, scope=L);
+4:                        )
+4:                intcon(1);
+3:              )
+1:      ENDFOR
+1:      FOR
+1:        init:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              intcon(0);
+1:        test:
+2:          &&(
+3:            <(
+4:              id(name=x, scope=L);
+4:              intcon(100);
+3:            )
+3:            >(
+4:              id(name=x, scope=L);
+4:              intcon(10);
+3:            )
+2:          )
+1:        update:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              +(
+4:                id(name=x, scope=L);
+4:                intcon(1);
+3:              )
+1:        body:
+2:          ASSG:
+2:            Lhs:
+3:              arrayRef(id(name=a, scope=G),
+4:                       id(name=x, scope=L);
+3:                      )
+2:            Rhs:
+3:              +(
+4:                arrayRef(id(name=a, scope=G),
+5:                         id(name=x, scope=L);
+4:                        )
+4:                intcon(1);
+3:              )
+1:      ENDFOR
+1:      FOR
+1:        init:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              intcon(0);
+1:        test:
+2:          !(
+3:            <(
+4:              id(name=x, scope=L);
+4:              intcon(100);
+3:            )
+2:          )
+1:        update:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              +(
+4:                id(name=x, scope=L);
+4:                intcon(1);
+3:              )
+1:        body:
+2:          ASSG:
+2:            Lhs:
+3:              arrayRef(id(name=a, scope=G),
+4:                       id(name=x, scope=L);
+3:                      )
+2:            Rhs:
+3:              +(
+4:                arrayRef(id(name=a, scope=G),
+5:                         id(name=x, scope=L);
+4:                        )
+4:                intcon(1);
+3:              )
+1:      ENDFOR
+1:      FOR
+1:        init:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              intcon(0);
+1:        test:
+2:          !(
+3:            !(
+4:              !(
+5:                !(
+6:                  !(
+7:                    <(
+8:                      id(name=x, scope=L);
+8:                      intcon(100);
+7:                    )
+6:                  )
+5:                )
+4:              )
+3:            )
+2:          )
+1:        update:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              +(
+4:                id(name=x, scope=L);
+4:                intcon(1);
+3:              )
+1:        body:
+2:          ASSG:
+2:            Lhs:
+3:              arrayRef(id(name=a, scope=G),
+4:                       id(name=x, scope=L);
+3:                      )
+2:            Rhs:
+3:              +(
+4:                arrayRef(id(name=a, scope=G),
+5:                         id(name=x, scope=L);
+4:                        )
+4:                intcon(1);
+3:              )
+1:      ENDFOR
+1:      FOR
+1:        init:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              intcon(0);
+1:        test:
+2:          &&(
+3:            ||(
+4:              &&(
+5:                <(
+6:                  id(name=x, scope=L);
+6:                  intcon(100);
+5:                )
+5:                ==(
+6:                  id(name=x, scope=L);
+6:                  intcon(0);
+5:                )
+4:              )
+4:              >(
+5:                id(name=x, scope=L);
+5:                intcon(10);
+4:              )
+3:            )
+3:            !(
+4:              <(
+5:                id(name=x, scope=L);
+5:                intcon(5);
+4:              )
+3:            )
+2:          )
+1:        update:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              +(
+4:                id(name=x, scope=L);
+4:                intcon(1);
+3:              )
+1:        body:
+2:          ASSG:
+2:            Lhs:
+3:              arrayRef(id(name=a, scope=G),
+4:                       id(name=x, scope=L);
+3:                      )
+2:            Rhs:
+3:              +(
+4:                arrayRef(id(name=a, scope=G),
+5:                         id(name=x, scope=L);
+4:                        )
+4:                intcon(1);
+3:              )
+1:      ENDFOR
+1:      FOR
+1:        init:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              intcon(0);
+1:        test:
+2:          <(
+3:            CALL: callee=bar
+3:              args:
+4:                {
+5:                  id(name=x, scope=L);
+4:                }
+3:            intcon(100);
+2:          )
+1:        update:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              +(
+4:                id(name=x, scope=L);
+4:                intcon(1);
+3:              )
+1:        body:
+2:          ASSG:
+2:            Lhs:
+3:              arrayRef(id(name=a, scope=G),
+4:                       id(name=x, scope=L);
+3:                      )
+2:            Rhs:
+3:              +(
+4:                arrayRef(id(name=a, scope=G),
+5:                         id(name=x, scope=L);
+4:                        )
+4:                intcon(1);
+3:              )
+1:      ENDFOR
+1:      FOR
+1:        init:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              CALL: callee=bar
+3:                args:
+4:                  {
+5:                    -(
+6:                      arrayRef(id(name=a, scope=G),
+7:                               +(
+8:                                 CALL: callee=bar
+8:                                   args:
+9:                                     {
+10:                                       -(
+11:                                         arrayRef(id(name=a, scope=G),
+12:                                                  +(
+13:                                                    CALL: callee=bar
+13:                                                      args:
+14:                                                        {
+15:                                                          arrayRef(id(name=c, scope=G),
+16:                                                                   intcon(0);
+15:                                                                  )
+14:                                                        }
+13:                                                    intcon(1);
+12:                                                  )
+11:                                                 )
+11:                                         intcon(1);
+10:                                       )
+9:                                     }
+8:                                 intcon(2);
+7:                               )
+6:                              )
+6:                      intcon(2);
+5:                    )
+4:                  }
+1:        test:
+2:          <(
+3:            CALL: callee=bar
+3:              args:
+4:                {
+5:                  CALL: callee=bar
+5:                    args:
+6:                      {
+7:                        CALL: callee=bar
+7:                          args:
+8:                            {
+9:                              id(name=x, scope=L);
+8:                            }
+6:                      }
+4:                }
+3:            intcon(100);
+2:          )
+1:        update:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              +(
+4:                id(name=x, scope=L);
+4:                intcon(1);
+3:              )
+1:        body:
+2:          ASSG:
+2:            Lhs:
+3:              arrayRef(id(name=a, scope=G),
+4:                       id(name=x, scope=L);
+3:                      )
+2:            Rhs:
+3:              +(
+4:                arrayRef(id(name=a, scope=G),
+5:                         id(name=x, scope=L);
+4:                        )
+4:                intcon(1);
+3:              )
+1:      ENDFOR
+1:      FOR
+1:        init:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              CALL: callee=bar
+3:                args:
+4:                  {
+5:                    -(
+6:                      arrayRef(id(name=a, scope=G),
+7:                               +(
+8:                                 CALL: callee=bar
+8:                                   args:
+9:                                     {
+10:                                       -(
+11:                                         arrayRef(id(name=a, scope=G),
+12:                                                  +(
+13:                                                    CALL: callee=bar
+13:                                                      args:
+14:                                                        {
+15:                                                          arrayRef(id(name=c, scope=G),
+16:                                                                   intcon(0);
+15:                                                                  )
+14:                                                        }
+13:                                                    intcon(1);
+12:                                                  )
+11:                                                 )
+11:                                         intcon(1);
+10:                                       )
+9:                                     }
+8:                                 intcon(2);
+7:                               )
+6:                              )
+6:                      intcon(2);
+5:                    )
+4:                  }
+1:        test:
+2:          <(
+3:            CALL: callee=bar
+3:              args:
+4:                {
+5:                  CALL: callee=bar
+5:                    args:
+6:                      {
+7:                        CALL: callee=bar
+7:                          args:
+8:                            {
+9:                              id(name=x, scope=L);
+8:                            }
+6:                      }
+4:                }
+3:            intcon(100);
+2:          )
+1:        update:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=L);
+2:            Rhs:
+3:              +(
+4:                CALL: callee=bar
+4:                  args:
+5:                    {
+6:                      -(
+7:                        arrayRef(id(name=a, scope=G),
+8:                                 +(
+9:                                   CALL: callee=bar
+9:                                     args:
+10:                                       {
+11:                                         -(
+12:                                           arrayRef(id(name=a, scope=G),
+13:                                                    +(
+14:                                                      CALL: callee=bar
+14:                                                        args:
+15:                                                          {
+16:                                                            arrayRef(id(name=c, scope=G),
+17:                                                                     intcon(0);
+16:                                                                    )
+15:                                                          }
+14:                                                      intcon(1);
+13:                                                    )
+12:                                                   )
+12:                                           intcon(1);
+11:                                         )
+10:                                       }
+9:                                   intcon(2);
+8:                                 )
+7:                                )
+7:                        intcon(2);
+6:                      )
+5:                    }
+4:                intcon(1);
+3:              )
+1:        body:
+2:          ASSG:
+2:            Lhs:
+3:              arrayRef(id(name=a, scope=G),
+4:                       id(name=x, scope=L);
+3:                      )
+2:            Rhs:
+3:              +(
+4:                arrayRef(id(name=a, scope=G),
+5:                         id(name=x, scope=L);
+4:                        )
+4:                intcon(1);
+3:              )
+1:      ENDFOR
+1:      FOR
+1:        init:
+2:          ASSG:
+2:            Lhs:
+3:              arrayRef(id(name=a, scope=G),
+4:                       intcon(0);
+3:                      )
+2:            Rhs:
+3:              intcon(0);
+1:        test:
+2:          <(
+3:            arrayRef(id(name=a, scope=G),
+4:                     intcon(0);
+3:                    )
+3:            intcon(100);
+2:          )
+1:        update:
+2:          ASSG:
+2:            Lhs:
+3:              arrayRef(id(name=a, scope=G),
+4:                       intcon(0);
+3:                      )
+2:            Rhs:
+3:              +(
+4:                arrayRef(id(name=a, scope=G),
+5:                         intcon(0);
+4:                        )
+4:                intcon(1);
+3:              )
+1:        body:
+2:          FOR
+2:            init:
+3:              ASSG:
+3:                Lhs:
+4:                  arrayRef(id(name=a, scope=G),
+5:                           intcon(1);
+4:                          )
+3:                Rhs:
+4:                  intcon(1);
+2:            test:
+3:              <(
+4:                arrayRef(id(name=a, scope=G),
+5:                         intcon(1);
+4:                        )
+4:                intcon(111);
+3:              )
+2:            update:
+3:              ASSG:
+3:                Lhs:
+4:                  arrayRef(id(name=a, scope=G),
+5:                           intcon(1);
+4:                          )
+3:                Rhs:
+4:                  +(
+5:                    arrayRef(id(name=a, scope=G),
+6:                             intcon(1);
+5:                            )
+5:                    intcon(1);
+4:                  )
+2:            body:
+3:              FOR
+3:                init:
+4:                  ASSG:
+4:                    Lhs:
+5:                      arrayRef(id(name=a, scope=G),
+6:                               intcon(2);
+5:                              )
+4:                    Rhs:
+5:                      intcon(2);
+3:                test:
+4:                  <(
+5:                    arrayRef(id(name=a, scope=G),
+6:                             intcon(2);
+5:                            )
+5:                    intcon(222);
+4:                  )
+3:                update:
+4:                  ASSG:
+4:                    Lhs:
+5:                      arrayRef(id(name=a, scope=G),
+6:                               intcon(2);
+5:                              )
+4:                    Rhs:
+5:                      +(
+6:                        arrayRef(id(name=a, scope=G),
+7:                                 intcon(2);
+6:                                )
+6:                        intcon(2);
+5:                      )
+3:                body:
+4:                  FOR
+4:                    init:
+5:                      ASSG:
+5:                        Lhs:
+6:                          arrayRef(id(name=a, scope=G),
+7:                                   intcon(3);
+6:                                  )
+5:                        Rhs:
+6:                          intcon(3);
+4:                    test:
+5:                      <(
+6:                        arrayRef(id(name=a, scope=G),
+7:                                 intcon(3);
+6:                                )
+6:                        intcon(333);
+5:                      )
+4:                    update:
+5:                      ASSG:
+5:                        Lhs:
+6:                          arrayRef(id(name=a, scope=G),
+7:                                   intcon(3);
+6:                                  )
+5:                        Rhs:
+6:                          +(
+7:                            arrayRef(id(name=a, scope=G),
+8:                                     intcon(3);
+7:                                    )
+7:                            intcon(3);
+6:                          )
+4:                    body:
+5:                      FOR
+5:                        init:
+6:                          ASSG:
+6:                            Lhs:
+7:                              arrayRef(id(name=a, scope=G),
+8:                                       intcon(4);
+7:                                      )
+6:                            Rhs:
+7:                              intcon(4);
+5:                        test:
+6:                          <(
+7:                            arrayRef(id(name=a, scope=G),
+8:                                     intcon(4);
+7:                                    )
+7:                            intcon(444);
+6:                          )
+5:                        update:
+6:                          ASSG:
+6:                            Lhs:
+7:                              arrayRef(id(name=a, scope=G),
+8:                                       intcon(4);
+7:                                      )
+6:                            Rhs:
+7:                              +(
+8:                                arrayRef(id(name=a, scope=G),
+9:                                         intcon(4);
+8:                                        )
+8:                                intcon(4);
+7:                              )
+5:                        body:
+6:                          FOR
+6:                            init:
+7:                              ASSG:
+7:                                Lhs:
+8:                                  arrayRef(id(name=a, scope=G),
+9:                                           intcon(5);
+8:                                          )
+7:                                Rhs:
+8:                                  intcon(5);
+6:                            test:
+7:                              <(
+8:                                arrayRef(id(name=a, scope=G),
+9:                                         intcon(5);
+8:                                        )
+8:                                intcon(555);
+7:                              )
+6:                            update:
+7:                              ASSG:
+7:                                Lhs:
+8:                                  arrayRef(id(name=a, scope=G),
+9:                                           intcon(5);
+8:                                          )
+7:                                Rhs:
+8:                                  +(
+9:                                    arrayRef(id(name=a, scope=G),
+10:                                             intcon(5);
+9:                                            )
+9:                                    intcon(5);
+8:                                  )
+6:                            body:
+7:                              FOR
+7:                                init:
+8:                                  ASSG:
+8:                                    Lhs:
+9:                                      arrayRef(id(name=a, scope=G),
+10:                                               intcon(6);
+9:                                              )
+8:                                    Rhs:
+9:                                      intcon(6);
+7:                                test:
+8:                                  <(
+9:                                    arrayRef(id(name=a, scope=G),
+10:                                             intcon(6);
+9:                                            )
+9:                                    intcon(666);
+8:                                  )
+7:                                update:
+8:                                  ASSG:
+8:                                    Lhs:
+9:                                      arrayRef(id(name=a, scope=G),
+10:                                               intcon(6);
+9:                                              )
+8:                                    Rhs:
+9:                                      +(
+10:                                        arrayRef(id(name=a, scope=G),
+11:                                                 intcon(6);
+10:                                                )
+10:                                        intcon(6);
+9:                                      )
+7:                                body:
+8:                                  -null-
+7:                              ENDFOR
+6:                          ENDFOR
+5:                      ENDFOR
+4:                  ENDFOR
+3:              ENDFOR
+2:          ENDFOR
+1:      ENDFOR
+1:      FOR
+1:        init:
+2:          ASSG:
+2:            Lhs:
+3:              arrayRef(id(name=c, scope=G),
+4:                       id(name=x, scope=L);
+3:                      )
+2:            Rhs:
+3:              intcon(1);
+1:        test:
+2:          <(
+3:            arrayRef(id(name=c, scope=G),
+4:                     id(name=x, scope=L);
+3:                    )
+3:            id(name=x, scope=L);
+2:          )
+1:        update:
+2:          ASSG:
+2:            Lhs:
+3:              arrayRef(id(name=c, scope=G),
+4:                       id(name=x, scope=L);
+3:                      )
+2:            Rhs:
+3:              +(
+4:                arrayRef(id(name=c, scope=G),
+5:                         arrayRef(id(name=c, scope=G),
+6:                                  id(name=x, scope=L);
+5:                                 )
+4:                        )
+4:                intcon(1);
+3:              )
+1:        body:
+2:          ASSG:
+2:            Lhs:
+3:              arrayRef(id(name=c, scope=G),
+4:                       id(name=x, scope=L);
+3:                      )
+2:            Rhs:
+3:              +(
+4:                arrayRef(id(name=c, scope=G),
+5:                         id(name=x, scope=L);
+4:                        )
+4:                intcon(1);
+3:              )
+1:      ENDFOR
+1:      RETURN:
+2:        id(name=x, scope=L);
+0:    }
+-----

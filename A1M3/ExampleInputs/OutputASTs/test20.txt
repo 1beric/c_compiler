@@ -1,0 +1,358 @@
+@@FUN: foo
+@@BODY:
+0:    {
+1:      {
+2:        {
+3:          {
+4:            {
+5:              ASSG:
+5:                Lhs:
+6:                  id(name=x, scope=L);
+5:                Rhs:
+6:                  intcon(1);
+5:              ASSG:
+5:                Lhs:
+6:                  id(name=x, scope=L);
+5:                Rhs:
+6:                  +(
+7:                    id(name=x, scope=L);
+7:                    intcon(1);
+6:                  )
+5:              {
+6:                ASSG:
+6:                  Lhs:
+7:                    id(name=x, scope=L);
+6:                  Rhs:
+7:                    -(
+8:                      id(name=x, scope=L);
+8:                      intcon(1);
+7:                    )
+6:                ASSG:
+6:                  Lhs:
+7:                    id(name=y, scope=L);
+6:                  Rhs:
+7:                    intcon(2);
+6:                {
+7:                  {
+8:                    {
+9:                      {
+10:                        {
+11:                          {
+12:                            {
+13:                              {
+14:                                {
+15:                                  -null-
+14:                                }
+13:                              }
+12:                            }
+11:                          }
+10:                        }
+9:                      }
+8:                    }
+7:                  }
+6:                }
+5:              }
+4:            }
+3:          }
+2:        }
+1:      }
+1:      RETURN:
+2:        -null-
+0:    }
+-----
+@@FUN: bar
+@@BODY:
+0:    {
+1:      IF
+2:          >(
+3:            id(name=x, scope=L);
+3:            intcon(0);
+2:          )
+1:        then:
+2:          IF
+3:              >(
+4:                id(name=x, scope=L);
+4:                intcon(1);
+3:              )
+2:            then:
+3:              IF
+4:                  >(
+5:                    id(name=x, scope=L);
+5:                    intcon(2);
+4:                  )
+3:                then:
+4:                  IF
+5:                      >(
+6:                        id(name=x, scope=L);
+6:                        intcon(3);
+5:                      )
+4:                    then:
+5:                      -null-
+4:                    else:
+5:                      -null-
+4:                  ENDIF
+3:                else:
+4:                  -null-
+3:              ENDIF
+2:            else:
+3:              -null-
+2:          ENDIF
+1:        else:
+2:          -null-
+1:      ENDIF
+1:      IF
+2:          >(
+3:            id(name=x, scope=L);
+3:            intcon(0);
+2:          )
+1:        then:
+2:          IF
+3:              >(
+4:                id(name=x, scope=L);
+4:                intcon(1);
+3:              )
+2:            then:
+3:              IF
+4:                  >(
+5:                    id(name=x, scope=L);
+5:                    intcon(2);
+4:                  )
+3:                then:
+4:                  IF
+5:                      >(
+6:                        id(name=x, scope=L);
+6:                        intcon(3);
+5:                      )
+4:                    then:
+5:                      {
+6:                        {
+7:                          {
+8:                            {
+9:                              {
+10:                                ASSG:
+10:                                  Lhs:
+11:                                    id(name=x, scope=L);
+10:                                  Rhs:
+11:                                    intcon(1);
+10:                                ASSG:
+10:                                  Lhs:
+11:                                    id(name=x, scope=L);
+10:                                  Rhs:
+11:                                    +(
+12:                                      id(name=x, scope=L);
+12:                                      intcon(1);
+11:                                    )
+10:                                {
+11:                                  ASSG:
+11:                                    Lhs:
+12:                                      id(name=x, scope=L);
+11:                                    Rhs:
+12:                                      -(
+13:                                        id(name=x, scope=L);
+13:                                        intcon(1);
+12:                                      )
+11:                                  ASSG:
+11:                                    Lhs:
+12:                                      id(name=y, scope=L);
+11:                                    Rhs:
+12:                                      intcon(2);
+11:                                  {
+12:                                    {
+13:                                      {
+14:                                        {
+15:                                          {
+16:                                            {
+17:                                              {
+18:                                                {
+19:                                                  {
+20:                                                    -null-
+19:                                                  }
+18:                                                }
+17:                                              }
+16:                                            }
+15:                                          }
+14:                                        }
+13:                                      }
+12:                                    }
+11:                                  }
+10:                                }
+9:                              }
+8:                            }
+7:                          }
+6:                        }
+5:                      }
+4:                    else:
+5:                      {
+6:                        {
+7:                          {
+8:                            {
+9:                              {
+10:                                ASSG:
+10:                                  Lhs:
+11:                                    id(name=x, scope=L);
+10:                                  Rhs:
+11:                                    intcon(1);
+10:                                ASSG:
+10:                                  Lhs:
+11:                                    id(name=x, scope=L);
+10:                                  Rhs:
+11:                                    +(
+12:                                      id(name=x, scope=L);
+12:                                      intcon(1);
+11:                                    )
+10:                                {
+11:                                  ASSG:
+11:                                    Lhs:
+12:                                      id(name=x, scope=L);
+11:                                    Rhs:
+12:                                      -(
+13:                                        id(name=x, scope=L);
+13:                                        intcon(1);
+12:                                      )
+11:                                  ASSG:
+11:                                    Lhs:
+12:                                      id(name=y, scope=L);
+11:                                    Rhs:
+12:                                      intcon(2);
+11:                                  {
+12:                                    {
+13:                                      {
+14:                                        {
+15:                                          {
+16:                                            {
+17:                                              {
+18:                                                {
+19:                                                  {
+20:                                                    -null-
+19:                                                  }
+18:                                                }
+17:                                              }
+16:                                            }
+15:                                          }
+14:                                        }
+13:                                      }
+12:                                    }
+11:                                  }
+10:                                }
+9:                              }
+8:                            }
+7:                          }
+6:                        }
+5:                      }
+4:                  ENDIF
+3:                else:
+4:                  -null-
+3:              ENDIF
+2:            else:
+3:              -null-
+2:          ENDIF
+1:        else:
+2:          -null-
+1:      ENDIF
+1:      IF
+2:          >(
+3:            id(name=x, scope=L);
+3:            intcon(0);
+2:          )
+1:        then:
+2:          IF
+3:              >(
+4:                id(name=x, scope=L);
+4:                intcon(1);
+3:              )
+2:            then:
+3:              {
+4:                IF
+5:                    >(
+6:                      id(name=x, scope=L);
+6:                      intcon(2);
+5:                    )
+4:                  then:
+5:                    IF
+6:                        >(
+7:                          id(name=x, scope=L);
+7:                          intcon(3);
+6:                        )
+5:                      then:
+6:                        ASSG:
+6:                          Lhs:
+7:                            id(name=x, scope=L);
+6:                          Rhs:
+7:                            +(
+8:                              id(name=x, scope=L);
+8:                              intcon(1);
+7:                            )
+5:                      else:
+6:                        ASSG:
+6:                          Lhs:
+7:                            id(name=x, scope=L);
+6:                          Rhs:
+7:                            -(
+8:                              id(name=x, scope=L);
+8:                              intcon(1);
+7:                            )
+5:                    ENDIF
+4:                  else:
+5:                    -null-
+4:                ENDIF
+3:              }
+2:            else:
+3:              IF
+4:                  >(
+5:                    id(name=x, scope=L);
+5:                    intcon(4);
+4:                  )
+3:                then:
+4:                  {
+5:                    IF
+6:                        >(
+7:                          id(name=x, scope=L);
+7:                          intcon(5);
+6:                        )
+5:                      then:
+6:                        IF
+7:                            >(
+8:                              id(name=x, scope=L);
+8:                              intcon(6);
+7:                            )
+6:                          then:
+7:                            ASSG:
+7:                              Lhs:
+8:                                id(name=x, scope=L);
+7:                              Rhs:
+8:                                +(
+9:                                  id(name=x, scope=L);
+9:                                  intcon(1);
+8:                                )
+6:                          else:
+7:                            ASSG:
+7:                              Lhs:
+8:                                id(name=x, scope=L);
+7:                              Rhs:
+8:                                -(
+9:                                  id(name=x, scope=L);
+9:                                  intcon(1);
+8:                                )
+6:                        ENDIF
+5:                      else:
+6:                        -null-
+5:                    ENDIF
+4:                  }
+3:                else:
+4:                  ASSG:
+4:                    Lhs:
+5:                      id(name=z, scope=L);
+4:                    Rhs:
+5:                      -(
+6:                        id(name=z, scope=L);
+6:                        intcon(1);
+5:                      )
+3:              ENDIF
+2:          ENDIF
+1:        else:
+2:          -null-
+1:      ENDIF
+1:      RETURN:
+2:        intcon(0);
+0:    }
+-----

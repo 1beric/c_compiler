@@ -1,0 +1,330 @@
+==32664== Memcheck, a memory error detector
+==32664== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==32664== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==32664== Command: ./compile -DDEBUG -Olocal
+==32664== Parent PID: 32660
+==32664== 
+--32664-- 
+--32664-- Valgrind options:
+--32664--    --leak-check=full
+--32664--    --show-leak-kinds=all
+--32664--    --track-origins=yes
+--32664--    --verbose
+--32664--    --log-file=tests/out_valgrind/val_1.txt
+--32664-- Contents of /proc/version:
+--32664--   Linux version 3.13.0-170-generic (buildd@lcy01-amd64-001) (gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.4) ) #220-Ubuntu SMP Thu May 9 12:40:49 UTC 2019
+--32664-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-rdtscp-sse3
+--32664-- Page sizes: currently 4096, max supported 4096
+--32664-- Valgrind library directory: /usr/lib/valgrind
+--32664-- Reading syms from /p4/hb/berickson/private/csc553/A2/compile
+--32664-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
+--32664--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
+--32664--   .. CRC mismatch (computed aedc220e wanted 13895c11)
+--32664--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
+--32664--   .. CRC is valid
+--32664-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--32664--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--32664--   .. CRC mismatch (computed fed8e6c5 wanted e6be554a)
+--32664--    object doesn't have a symbol table
+--32664--    object doesn't have a dynamic symbol table
+--32664-- Scheduler: using generic scheduler lock implementation.
+--32664-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==32664== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-32664-by-berickson-on-???
+==32664== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-32664-by-berickson-on-???
+==32664== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-32664-by-berickson-on-???
+==32664== 
+==32664== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==32664== don't want to do, unless you know exactly what you're doing,
+==32664== or are doing some strange experiment):
+==32664==   /usr/lib/valgrind/../../bin/vgdb --pid=32664 ...command...
+==32664== 
+==32664== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==32664==   /path/to/gdb ./compile
+==32664== and then give GDB the following command
+==32664==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=32664
+==32664== --pid is optional if only one valgrind process is running
+==32664== 
+--32664-- REDIR: 0x4019d70 (ld-linux-x86-64.so.2:strlen) redirected to 0x380764b1 (???)
+--32664-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--32664--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--32664--   .. CRC mismatch (computed 4bcdfe99 wanted 3143e841)
+--32664--    object doesn't have a symbol table
+--32664-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--32664--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--32664--   .. CRC mismatch (computed 3df18bf1 wanted 14fefe1c)
+--32664--    object doesn't have a symbol table
+==32664== WARNING: new redirection conflicts with existing -- ignoring it
+--32664--     old: 0x04019d70 (strlen              ) R-> (0000.0) 0x380764b1 ???
+--32664--     new: 0x04019d70 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
+--32664-- REDIR: 0x4019b20 (ld-linux-x86-64.so.2:index) redirected to 0x4c2dd50 (index)
+--32664-- REDIR: 0x4019d40 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c2f2f0 (strcmp)
+--32664-- REDIR: 0x401aa90 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c31da0 (mempcpy)
+--32664-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
+--32664--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
+--32664--   .. CRC mismatch (computed 8932cdd8 wanted 3aceb420)
+--32664--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
+--32664--   .. CRC is valid
+--32664-- REDIR: 0x4ec4070 (libc.so.6:strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--32664-- REDIR: 0x4ec6360 (libc.so.6:strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--32664-- REDIR: 0x4ec3840 (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--32664-- REDIR: 0x4ec1ad0 (libc.so.6:rindex) redirected to 0x4c2da30 (rindex)
+--32664-- REDIR: 0x4ebe380 (libc.so.6:strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--32664-- REDIR: 0x4ed1780 (libc.so.6:__strcmp_sse2_unaligned) redirected to 0x4c2f1b0 (strcmp)
+--32664-- REDIR: 0x4eb9a80 (libc.so.6:malloc) redirected to 0x4c2ab10 (malloc)
+--32664-- REDIR: 0x4ec38d0 (libc.so.6:memset) redirected to 0x4c31350 (memset)
+--32664-- REDIR: 0x4ebfdd0 (libc.so.6:strlen) redirected to 0x4c2e0e0 (strlen)
+--32664-- REDIR: 0x4ec8a90 (libc.so.6:__GI_memcpy) redirected to 0x4c2fc90 (__GI_memcpy)
+--32664-- REDIR: 0x4eba550 (libc.so.6:calloc) redirected to 0x4c2cbf0 (calloc)
+--32664-- REDIR: 0x4ecadd0 (libc.so.6:strchrnul) redirected to 0x4c319b0 (strchrnul)
+==32664== Invalid read of size 4
+==32664==    at 0x409B42: printb (codegen.c:2437)
+==32664==    by 0x409B94: print_cfg (codegen.c:2449)
+==32664==    by 0x408B59: gen_mips_code (codegen.c:1849)
+==32664==    by 0x4057B3: gen_code (codegen.c:192)
+==32664==    by 0x40A4A0: yyparse (parser.y:97)
+==32664==    by 0x403223: main (main.c:30)
+==32664==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==32664== 
+==32664== 
+==32664== Process terminating with default action of signal 11 (SIGSEGV)
+==32664==  Access not within mapped region at address 0x0
+==32664==    at 0x409B42: printb (codegen.c:2437)
+==32664==    by 0x409B94: print_cfg (codegen.c:2449)
+==32664==    by 0x408B59: gen_mips_code (codegen.c:1849)
+==32664==    by 0x4057B3: gen_code (codegen.c:192)
+==32664==    by 0x40A4A0: yyparse (parser.y:97)
+==32664==    by 0x403223: main (main.c:30)
+==32664==  If you believe this happened as a result of a stack
+==32664==  overflow in your program's main thread (unlikely but
+==32664==  possible), you can try to increase the size of the
+==32664==  main thread stack using the --main-stacksize= flag.
+==32664==  The main thread stack size used in this run was 8388608.
+--32664-- REDIR: 0x4eba120 (libc.so.6:free) redirected to 0x4c2bd80 (free)
+==32664== 
+==32664== HEAP SUMMARY:
+==32664==     in use at exit: 17,119 bytes in 20 blocks
+==32664==   total heap usage: 20 allocs, 0 frees, 17,119 bytes allocated
+==32664== 
+==32664== Searching for pointers to 20 not-freed blocks
+==32664== Checked 209,424 bytes
+==32664== 
+==32664== 5 bytes in 1 blocks are still reachable in loss record 1 of 20
+==32664==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32664==    by 0x4EBFB49: strdup (strdup.c:42)
+==32664==    by 0x403148: id_or_keywd (scanner.l:101)
+==32664==    by 0x40164A: yylex (scanner.l:37)
+==32664==    by 0x40A2BC: yyparse (y.tab.c:1349)
+==32664==    by 0x403223: main (main.c:30)
+==32664== 
+==32664== 8 bytes in 1 blocks are still reachable in loss record 2 of 20
+==32664==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32664==    by 0x403097: yyalloc (lex.yy.c:1961)
+==32664==    by 0x402BAE: yyensure_buffer_stack (lex.yy.c:1661)
+==32664==    by 0x401438: yylex (lex.yy.c:726)
+==32664==    by 0x40A2BC: yyparse (y.tab.c:1349)
+==32664==    by 0x403223: main (main.c:30)
+==32664== 
+==32664== 16 bytes in 1 blocks are still reachable in loss record 3 of 20
+==32664==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32664==    by 0x40569F: zalloc (util.c:21)
+==32664==    by 0x4097D9: mk_stptr_op (codegen.c:2297)
+==32664==    by 0x4063DB: gen_3addr_code_return (codegen.c:601)
+==32664==    by 0x4058F3: gen_3addr_code (codegen.c:263)
+==32664==    by 0x4059CB: gen_3addr_code_funcbody (codegen.c:323)
+==32664==    by 0x405797: gen_code (codegen.c:190)
+==32664==    by 0x40A4A0: yyparse (parser.y:97)
+==32664==    by 0x403223: main (main.c:30)
+==32664== 
+==32664== 16 bytes in 1 blocks are still reachable in loss record 4 of 20
+==32664==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32664==    by 0x40569F: zalloc (util.c:21)
+==32664==    by 0x4097D9: mk_stptr_op (codegen.c:2297)
+==32664==    by 0x4059DA: gen_3addr_code_funcbody (codegen.c:328)
+==32664==    by 0x405797: gen_code (codegen.c:190)
+==32664==    by 0x40A4A0: yyparse (parser.y:97)
+==32664==    by 0x403223: main (main.c:30)
+==32664== 
+==32664== 16 bytes in 1 blocks are still reachable in loss record 5 of 20
+==32664==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32664==    by 0x40569F: zalloc (util.c:21)
+==32664==    by 0x4071C0: gen_cfg (codegen.c:1024)
+==32664==    by 0x4057F7: gen_optimizations (codegen.c:200)
+==32664==    by 0x4057A7: gen_code (codegen.c:191)
+==32664==    by 0x40A4A0: yyparse (parser.y:97)
+==32664==    by 0x403223: main (main.c:30)
+==32664== 
+==32664== 24 bytes in 1 blocks are still reachable in loss record 6 of 20
+==32664==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32664==    by 0x40569F: zalloc (util.c:21)
+==32664==    by 0x4074A2: new_cfgi (codegen.c:1108)
+==32664==    by 0x4073BB: bb_add_ins (codegen.c:1084)
+==32664==    by 0x40721F: gen_cfg (codegen.c:1034)
+==32664==    by 0x4057F7: gen_optimizations (codegen.c:200)
+==32664==    by 0x4057A7: gen_code (codegen.c:191)
+==32664==    by 0x40A4A0: yyparse (parser.y:97)
+==32664==    by 0x403223: main (main.c:30)
+==32664== 
+==32664== 24 bytes in 1 blocks are still reachable in loss record 7 of 20
+==32664==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32664==    by 0x40569F: zalloc (util.c:21)
+==32664==    by 0x4074A2: new_cfgi (codegen.c:1108)
+==32664==    by 0x407514: cfgi_add_ins (codegen.c:1120)
+==32664==    by 0x4073DC: bb_add_ins (codegen.c:1086)
+==32664==    by 0x40721F: gen_cfg (codegen.c:1034)
+==32664==    by 0x4057F7: gen_optimizations (codegen.c:200)
+==32664==    by 0x4057A7: gen_code (codegen.c:191)
+==32664==    by 0x40A4A0: yyparse (parser.y:97)
+==32664==    by 0x403223: main (main.c:30)
+==32664== 
+==32664== 24 bytes in 1 blocks are still reachable in loss record 8 of 20
+==32664==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32664==    by 0x40569F: zalloc (util.c:21)
+==32664==    by 0x4074A2: new_cfgi (codegen.c:1108)
+==32664==    by 0x407514: cfgi_add_ins (codegen.c:1120)
+==32664==    by 0x407501: cfgi_add_ins (codegen.c:1118)
+==32664==    by 0x4073DC: bb_add_ins (codegen.c:1086)
+==32664==    by 0x40721F: gen_cfg (codegen.c:1034)
+==32664==    by 0x4057F7: gen_optimizations (codegen.c:200)
+==32664==    by 0x4057A7: gen_code (codegen.c:191)
+==32664==    by 0x40A4A0: yyparse (parser.y:97)
+==32664==    by 0x403223: main (main.c:30)
+==32664== 
+==32664== 24 bytes in 1 blocks are still reachable in loss record 9 of 20
+==32664==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32664==    by 0x40569F: zalloc (util.c:21)
+==32664==    by 0x4074A2: new_cfgi (codegen.c:1108)
+==32664==    by 0x407514: cfgi_add_ins (codegen.c:1120)
+==32664==    by 0x407501: cfgi_add_ins (codegen.c:1118)
+==32664==    by 0x407501: cfgi_add_ins (codegen.c:1118)
+==32664==    by 0x4073DC: bb_add_ins (codegen.c:1086)
+==32664==    by 0x40721F: gen_cfg (codegen.c:1034)
+==32664==    by 0x4057F7: gen_optimizations (codegen.c:200)
+==32664==    by 0x4057A7: gen_code (codegen.c:191)
+==32664==    by 0x40A4A0: yyparse (parser.y:97)
+==32664==    by 0x403223: main (main.c:30)
+==32664== 
+==32664== 24 bytes in 1 blocks are still reachable in loss record 10 of 20
+==32664==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32664==    by 0x40569F: zalloc (util.c:21)
+==32664==    by 0x4074A2: new_cfgi (codegen.c:1108)
+==32664==    by 0x407514: cfgi_add_ins (codegen.c:1120)
+==32664==    by 0x407501: cfgi_add_ins (codegen.c:1118)
+==32664==    by 0x407501: cfgi_add_ins (codegen.c:1118)
+==32664==    by 0x407501: cfgi_add_ins (codegen.c:1118)
+==32664==    by 0x4073DC: bb_add_ins (codegen.c:1086)
+==32664==    by 0x40721F: gen_cfg (codegen.c:1034)
+==32664==    by 0x4057F7: gen_optimizations (codegen.c:200)
+==32664==    by 0x4057A7: gen_code (codegen.c:191)
+==32664==    by 0x40A4A0: yyparse (parser.y:97)
+==32664== 
+==32664== 56 bytes in 1 blocks are still reachable in loss record 11 of 20
+==32664==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32664==    by 0x40569F: zalloc (util.c:21)
+==32664==    by 0x409943: new_instr (codegen.c:2367)
+==32664==    by 0x4063F2: gen_3addr_code_return (codegen.c:601)
+==32664==    by 0x4058F3: gen_3addr_code (codegen.c:263)
+==32664==    by 0x4059CB: gen_3addr_code_funcbody (codegen.c:323)
+==32664==    by 0x405797: gen_code (codegen.c:190)
+==32664==    by 0x40A4A0: yyparse (parser.y:97)
+==32664==    by 0x403223: main (main.c:30)
+==32664== 
+==32664== 56 bytes in 1 blocks are still reachable in loss record 12 of 20
+==32664==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32664==    by 0x40569F: zalloc (util.c:21)
+==32664==    by 0x409943: new_instr (codegen.c:2367)
+==32664==    by 0x40640F: gen_3addr_code_return (codegen.c:602)
+==32664==    by 0x4058F3: gen_3addr_code (codegen.c:263)
+==32664==    by 0x4059CB: gen_3addr_code_funcbody (codegen.c:323)
+==32664==    by 0x405797: gen_code (codegen.c:190)
+==32664==    by 0x40A4A0: yyparse (parser.y:97)
+==32664==    by 0x403223: main (main.c:30)
+==32664== 
+==32664== 56 bytes in 1 blocks are still reachable in loss record 13 of 20
+==32664==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32664==    by 0x40569F: zalloc (util.c:21)
+==32664==    by 0x409943: new_instr (codegen.c:2367)
+==32664==    by 0x4059F9: gen_3addr_code_funcbody (codegen.c:329)
+==32664==    by 0x405797: gen_code (codegen.c:190)
+==32664==    by 0x40A4A0: yyparse (parser.y:97)
+==32664==    by 0x403223: main (main.c:30)
+==32664== 
+==32664== 56 bytes in 1 blocks are still reachable in loss record 14 of 20
+==32664==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32664==    by 0x40569F: zalloc (util.c:21)
+==32664==    by 0x409943: new_instr (codegen.c:2367)
+==32664==    by 0x405A18: gen_3addr_code_funcbody (codegen.c:330)
+==32664==    by 0x405797: gen_code (codegen.c:190)
+==32664==    by 0x40A4A0: yyparse (parser.y:97)
+==32664==    by 0x403223: main (main.c:30)
+==32664== 
+==32664== 56 bytes in 1 blocks are still reachable in loss record 15 of 20
+==32664==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32664==    by 0x40569F: zalloc (util.c:21)
+==32664==    by 0x409943: new_instr (codegen.c:2367)
+==32664==    by 0x405A35: gen_3addr_code_funcbody (codegen.c:331)
+==32664==    by 0x405797: gen_code (codegen.c:190)
+==32664==    by 0x40A4A0: yyparse (parser.y:97)
+==32664==    by 0x403223: main (main.c:30)
+==32664== 
+==32664== 64 bytes in 1 blocks are still reachable in loss record 16 of 20
+==32664==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32664==    by 0x403097: yyalloc (lex.yy.c:1961)
+==32664==    by 0x402747: yy_create_buffer (lex.yy.c:1496)
+==32664==    by 0x401462: yylex (lex.yy.c:728)
+==32664==    by 0x40A2BC: yyparse (y.tab.c:1349)
+==32664==    by 0x403223: main (main.c:30)
+==32664== 
+==32664== 64 bytes in 1 blocks are still reachable in loss record 17 of 20
+==32664==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32664==    by 0x40569F: zalloc (util.c:21)
+==32664==    by 0x40507E: mkSTNode (syntax-tree.c:446)
+==32664==    by 0x40554E: AppendReturn (syntax-tree.c:693)
+==32664==    by 0x40A480: yyparse (parser.y:91)
+==32664==    by 0x403223: main (main.c:30)
+==32664== 
+==32664== 72 bytes in 1 blocks are still reachable in loss record 18 of 20
+==32664==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32664==    by 0x40569F: zalloc (util.c:21)
+==32664==    by 0x403DAF: SymTabInsert (symbol-table.c:122)
+==32664==    by 0x404009: SymTabRecordFunInfo (symbol-table.c:202)
+==32664==    by 0x40A45E: yyparse (parser.y:88)
+==32664==    by 0x403223: main (main.c:30)
+==32664== 
+==32664== 72 bytes in 1 blocks are still reachable in loss record 19 of 20
+==32664==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32664==    by 0x40569F: zalloc (util.c:21)
+==32664==    by 0x407336: new_block (codegen.c:1071)
+==32664==    by 0x4071A6: gen_cfg (codegen.c:1021)
+==32664==    by 0x4057F7: gen_optimizations (codegen.c:200)
+==32664==    by 0x4057A7: gen_code (codegen.c:191)
+==32664==    by 0x40A4A0: yyparse (parser.y:97)
+==32664==    by 0x403223: main (main.c:30)
+==32664== 
+==32664== 16,386 bytes in 1 blocks are still reachable in loss record 20 of 20
+==32664==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32664==    by 0x403097: yyalloc (lex.yy.c:1961)
+==32664==    by 0x40277E: yy_create_buffer (lex.yy.c:1505)
+==32664==    by 0x401462: yylex (lex.yy.c:728)
+==32664==    by 0x40A2BC: yyparse (y.tab.c:1349)
+==32664==    by 0x403223: main (main.c:30)
+==32664== 
+==32664== LEAK SUMMARY:
+==32664==    definitely lost: 0 bytes in 0 blocks
+==32664==    indirectly lost: 0 bytes in 0 blocks
+==32664==      possibly lost: 0 bytes in 0 blocks
+==32664==    still reachable: 17,119 bytes in 20 blocks
+==32664==         suppressed: 0 bytes in 0 blocks
+==32664== 
+==32664== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==32664== 
+==32664== 1 errors in context 1 of 1:
+==32664== Invalid read of size 4
+==32664==    at 0x409B42: printb (codegen.c:2437)
+==32664==    by 0x409B94: print_cfg (codegen.c:2449)
+==32664==    by 0x408B59: gen_mips_code (codegen.c:1849)
+==32664==    by 0x4057B3: gen_code (codegen.c:192)
+==32664==    by 0x40A4A0: yyparse (parser.y:97)
+==32664==    by 0x403223: main (main.c:30)
+==32664==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==32664== 
+==32664== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

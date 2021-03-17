@@ -1,0 +1,334 @@
+@@FUN: foo
+@@BODY:
+0:    {
+1:      IF
+2:          &&(
+3:            >(
+4:              id(name=x, scope=L);
+4:              intcon(0);
+3:            )
+3:            <(
+4:              id(name=x, scope=L);
+4:              intcon(100);
+3:            )
+2:          )
+1:        then:
+2:          {
+3:            FOR
+3:              init:
+4:                ASSG:
+4:                  Lhs:
+5:                    id(name=y, scope=L);
+4:                  Rhs:
+5:                    intcon(0);
+3:              test:
+4:                &&(
+5:                  <(
+6:                    id(name=y, scope=L);
+6:                    intcon(10);
+5:                  )
+5:                  !=(
+6:                    id(name=y, scope=L);
+6:                    CALL: callee=bar
+6:                      args:
+7:                        {
+8:                          CALL: callee=bar
+8:                            args:
+9:                              {
+10:                                CALL: callee=foo
+10:                                  args:
+11:                                    {
+12:                                      +(
+13:                                        id(name=x, scope=L);
+13:                                        intcon(1);
+12:                                      )
+12:                                      -(
+13:                                        id(name=y, scope=L);
+13:                                        intcon(1);
+12:                                      )
+12:                                      *(
+13:                                        id(name=z, scope=L);
+13:                                        intcon(2);
+12:                                      )
+11:                                    }
+9:                              }
+7:                        }
+5:                  )
+4:                )
+3:              update:
+4:                ASSG:
+4:                  Lhs:
+5:                    id(name=y, scope=L);
+4:                  Rhs:
+5:                    +(
+6:                      id(name=x, scope=L);
+6:                      intcon(1);
+5:                    )
+3:              body:
+4:                IF
+5:                    &&(
+6:                      >(
+7:                        id(name=x, scope=L);
+7:                        intcon(1);
+6:                      )
+6:                      <(
+7:                        id(name=x, scope=L);
+7:                        intcon(99);
+6:                      )
+5:                    )
+4:                  then:
+5:                    {
+6:                      WHILE
+7:                          >(
+8:                            id(name=y, scope=L);
+8:                            intcon(0);
+7:                          )
+6:  body:
+ 7:                          {
+8:                            ASSG:
+8:                              Lhs:
+9:                                id(name=y, scope=L);
+8:                              Rhs:
+9:                                +(
+10:                                  id(name=y, scope=L);
+10:                                  intcon(1);
+9:                                )
+8:                            WHILE
+9:                                >(
+10:                                  id(name=y, scope=L);
+10:                                  intcon(1);
+9:                                )
+8:  body:
+ 9:                                {
+10:                                  ASSG:
+10:                                    Lhs:
+11:                                      id(name=y, scope=L);
+10:                                    Rhs:
+11:                                      +(
+12:                                        id(name=y, scope=L);
+12:                                        intcon(2);
+11:                                      )
+10:                                  WHILE
+11:                                      >(
+12:                                        id(name=y, scope=L);
+12:                                        intcon(3);
+11:                                      )
+10:  body:
+ 11:                                      {
+12:                                        FOR
+12:                                          init:
+13:                                            ASSG:
+13:                                              Lhs:
+14:                                                id(name=z, scope=L);
+13:                                              Rhs:
+14:                                                intcon(0);
+12:                                          test:
+13:                                            !=(
+14:                                              id(name=z, scope=L);
+14:                                              id(name=x, scope=L);
+13:                                            )
+12:                                          update:
+13:                                            ASSG:
+13:                                              Lhs:
+14:                                                id(name=z, scope=L);
+13:                                              Rhs:
+14:                                                -(
+15:                                                  id(name=z, scope=L);
+15:                                                  intcon(1);
+14:                                                )
+12:                                          body:
+13:                                            FOR
+13:                                              init:
+14:                                                ASSG:
+14:                                                  Lhs:
+15:                                                    id(name=z, scope=L);
+14:                                                  Rhs:
+15:                                                    intcon(1);
+13:                                              test:
+14:                                                !=(
+15:                                                  id(name=z, scope=L);
+15:                                                  +(
+16:                                                    id(name=x, scope=L);
+16:                                                    intcon(1);
+15:                                                  )
+14:                                                )
+13:                                              update:
+14:                                                ASSG:
+14:                                                  Lhs:
+15:                                                    id(name=z, scope=L);
+14:                                                  Rhs:
+15:                                                    -(
+16:                                                      id(name=z, scope=L);
+16:                                                      intcon(1);
+15:                                                    )
+13:                                              body:
+14:                                                FOR
+14:                                                  init:
+15:                                                    ASSG:
+15:                                                      Lhs:
+16:                                                        id(name=z, scope=L);
+15:                                                      Rhs:
+16:                                                        intcon(2);
+14:                                                  test:
+15:                                                    !=(
+16:                                                      id(name=z, scope=L);
+16:                                                      CALL: callee=foo
+16:                                                        args:
+17:                                                          {
+18:                                                            id(name=x, scope=L);
+18:                                                            +(
+19:                                                              id(name=x, scope=L);
+19:                                                              intcon(1);
+18:                                                            )
+18:                                                            +(
+19:                                                              id(name=x, scope=L);
+19:                                                              intcon(2);
+18:                                                            )
+17:                                                          }
+15:                                                    )
+14:                                                  update:
+15:                                                    ASSG:
+15:                                                      Lhs:
+16:                                                        id(name=z, scope=L);
+15:                                                      Rhs:
+16:                                                        -(
+17:                                                          id(name=z, scope=L);
+17:                                                          intcon(1);
+16:                                                        )
+14:                                                  body:
+15:                                                    WHILE
+16:                                                        >(
+17:                                                          id(name=y, scope=L);
+17:                                                          intcon(4);
+16:                                                        )
+15:  body:
+ 16:                                                        -null-
+15:                                                    ENDWHILE
+14:                                                ENDFOR
+13:                                            ENDFOR
+12:                                        ENDFOR
+11:                                      }
+10:                                  ENDWHILE
+9:                                }
+8:                            ENDWHILE
+7:                          }
+6:                      ENDWHILE
+5:                    }
+4:                  else:
+5:                    IF
+6:                        &&(
+7:                          &&(
+8:                            >(
+9:                              id(name=x, scope=L);
+9:                              id(name=y, scope=L);
+8:                            )
+8:                            >(
+9:                              id(name=y, scope=L);
+9:                              id(name=z, scope=L);
+8:                            )
+7:                          )
+7:                          >(
+8:                            id(name=z, scope=L);
+8:                            id(name=x, scope=L);
+7:                          )
+6:                        )
+5:                      then:
+6:                        IF
+7:                            ||(
+8:                              ||(
+9:                                >(
+10:                                  id(name=y, scope=L);
+10:                                  id(name=z, scope=L);
+9:                                )
+9:                                >(
+10:                                  id(name=z, scope=L);
+10:                                  id(name=x, scope=L);
+9:                                )
+8:                              )
+8:                              >(
+9:                                id(name=x, scope=L);
+9:                                id(name=y, scope=L);
+8:                              )
+7:                            )
+6:                          then:
+7:                            IF
+8:                                &&(
+9:                                  !(
+10:                                    >(
+11:                                      id(name=z, scope=L);
+11:                                      id(name=x, scope=L);
+10:                                    )
+9:                                  )
+9:                                  !(
+10:                                    &&(
+11:                                      >(
+12:                                        id(name=x, scope=L);
+12:                                        id(name=y, scope=L);
+11:                                      )
+11:                                      !(
+12:                                        >(
+13:                                          id(name=y, scope=L);
+13:                                          id(name=z, scope=L);
+12:                                        )
+11:                                      )
+10:                                    )
+9:                                  )
+8:                                )
+7:                              then:
+8:                                ASSG:
+8:                                  Lhs:
+9:                                    id(name=x, scope=L);
+8:                                  Rhs:
+9:                                    +(
+10:                                      id(name=x, scope=L);
+10:                                      intcon(1);
+9:                                    )
+7:                              else:
+8:                                ASSG:
+8:                                  Lhs:
+9:                                    id(name=x, scope=L);
+8:                                  Rhs:
+9:                                    -(
+10:                                      id(name=x, scope=L);
+10:                                      intcon(1);
+9:                                    )
+7:                            ENDIF
+6:                          else:
+7:                            ASSG:
+7:                              Lhs:
+8:                                id(name=y, scope=L);
+7:                              Rhs:
+8:                                *(
+9:                                  id(name=y, scope=L);
+9:                                  intcon(2);
+8:                                )
+6:                        ENDIF
+5:                      else:
+6:                        ASSG:
+6:                          Lhs:
+7:                            id(name=z, scope=L);
+6:                          Rhs:
+7:                            CALL: callee=foo
+7:                              args:
+8:                                {
+9:                                  id(name=y, scope=L);
+9:                                  id(name=z, scope=L);
+9:                                  id(name=x, scope=L);
+8:                                }
+5:                    ENDIF
+4:                ENDIF
+3:            ENDFOR
+2:          }
+1:        else:
+2:          -null-
+1:      ENDIF
+1:      RETURN:
+2:        +(
+3:          +(
+4:            id(name=x, scope=L);
+4:            id(name=y, scope=L);
+3:          )
+3:          id(name=z, scope=L);
+2:        )
+0:    }
+-----

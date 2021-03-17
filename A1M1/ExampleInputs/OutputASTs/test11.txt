@@ -1,0 +1,121 @@
+@@FUN: bar
+@@BODY:
+0:    {
+1:      RETURN:
+2:        -null-
+0:    }
+-----
+@@FUN: foo
+@@BODY:
+0:    {
+1:      ASSG:
+1:        Lhs:
+2:          id(name=x, scope=G);
+1:        Rhs:
+2:          intcon(0);
+1:      ASSG:
+1:        Lhs:
+2:          id(name=x, scope=G);
+1:        Rhs:
+2:          id(name=y, scope=G);
+1:      ASSG:
+1:        Lhs:
+2:          id(name=y, scope=G);
+1:        Rhs:
+2:          +(
+3:            id(name=x, scope=G);
+3:            intcon(1);
+2:          )
+1:      ASSG:
+1:        Lhs:
+2:          arrayRef(id(name=u, scope=L),
+3:                   intcon(1);
+2:                  )
+1:        Rhs:
+2:          id(name=y, scope=G);
+1:      ASSG:
+1:        Lhs:
+2:          id(name=z, scope=L);
+1:        Rhs:
+2:          arrayRef(id(name=u, scope=L),
+3:                   intcon(0);
+2:                  )
+1:      ASSG:
+1:        Lhs:
+2:          arrayRef(id(name=u, scope=L),
+3:                   id(name=x, scope=G);
+2:                  )
+1:        Rhs:
+2:          +(
+3:            id(name=x, scope=G);
+3:            charcon(97);
+2:          )
+1:      ASSG:
+1:        Lhs:
+2:          id(name=y, scope=G);
+1:        Rhs:
+2:          arrayRef(id(name=u, scope=L),
+3:                   id(name=y, scope=G);
+2:                  )
+1:      ASSG:
+1:        Lhs:
+2:          id(name=z, scope=L);
+1:        Rhs:
+2:          CALL: callee=foo
+2:            args:
+3:              {
+4:                *(
+5:                  id(name=y, scope=G);
+5:                  id(name=x, scope=G);
+4:                )
+3:              }
+1:      ASSG:
+1:        Lhs:
+2:          id(name=x, scope=G);
+1:        Rhs:
+2:          CALL: callee=foo
+2:            args:
+3:              {
+4:                arrayRef(id(name=u, scope=L),
+5:                         id(name=x, scope=G);
+4:                        )
+3:              }
+1:      CALL: callee=bar
+1:        args:
+2:          {
+3:            arrayRef(id(name=u, scope=L),
+4:                     intcon(0);
+3:                    )
+2:          }
+1:      CALL: callee=bar
+1:        args:
+2:          {
+3:            arrayRef(id(name=u, scope=L),
+4:                     id(name=x, scope=G);
+3:                    )
+2:          }
+1:      CALL: callee=bar
+1:        args:
+2:          {
+3:            arrayRef(id(name=u, scope=L),
+4:                     charcon(98);
+3:                    )
+2:          }
+1:      CALL: callee=bar
+1:        args:
+2:          {
+3:            arrayRef(id(name=u, scope=L),
+4:                     +(
+5:                       id(name=x, scope=G);
+5:                       id(name=y, scope=G);
+4:                     )
+3:                    )
+2:          }
+1:      RETURN:
+2:        CALL: callee=foo
+2:          args:
+3:            {
+4:              id(name=z, scope=L);
+3:            }
+0:    }
+-----

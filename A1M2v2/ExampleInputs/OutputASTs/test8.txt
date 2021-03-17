@@ -1,0 +1,14 @@
+@@FUN: f
+@@BODY:
+0:    {
+1:      RETURN:
+2:        id(name=x, scope=L);
+0:    }
+-----
+@@FUN: g
+@@BODY:
+0:    {
+1:      RETURN:
+2:        id(name=g, scope=L);
+0:    }
+-----

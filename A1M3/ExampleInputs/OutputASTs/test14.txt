@@ -1,0 +1,287 @@
+@@FUN: foo
+@@BODY:
+0:    {
+1:      IF
+2:          &&(
+3:            &&(
+4:              >(
+5:                id(name=z, scope=L);
+5:                intcon(0);
+4:              )
+4:              >(
+5:                id(name=x, scope=G);
+5:                intcon(0);
+4:              )
+3:            )
+3:            >(
+4:              id(name=y, scope=G);
+4:              intcon(0);
+3:            )
+2:          )
+1:        then:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=x, scope=G);
+2:            Rhs:
+3:              intcon(1);
+1:        else:
+2:          -null-
+1:      ENDIF
+1:      IF
+2:          ||(
+3:            ||(
+4:              ==(
+5:                id(name=z, scope=L);
+5:                intcon(0);
+4:              )
+4:              ==(
+5:                id(name=x, scope=G);
+5:                intcon(0);
+4:              )
+3:            )
+3:            ==(
+4:              id(name=y, scope=G);
+4:              intcon(0);
+3:            )
+2:          )
+1:        then:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=y, scope=G);
+2:            Rhs:
+3:              intcon(1);
+1:        else:
+2:          -null-
+1:      ENDIF
+1:      IF
+2:          !(
+3:            &&(
+4:              &&(
+5:                >(
+6:                  id(name=x, scope=G);
+6:                  id(name=y, scope=G);
+5:                )
+5:                >(
+6:                  id(name=y, scope=G);
+6:                  id(name=z, scope=L);
+5:                )
+4:              )
+4:              >(
+5:                id(name=z, scope=L);
+5:                id(name=x, scope=G);
+4:              )
+3:            )
+2:          )
+1:        then:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=z, scope=L);
+2:            Rhs:
+3:              intcon(0);
+1:        else:
+2:          -null-
+1:      ENDIF
+1:      IF
+2:          &&(
+3:            ||(
+4:              &&(
+5:                ||(
+6:                  &&(
+7:                    >(
+8:                      id(name=x, scope=G);
+8:                      id(name=y, scope=G);
+7:                    )
+7:                    >(
+8:                      id(name=y, scope=G);
+8:                      id(name=z, scope=L);
+7:                    )
+6:                  )
+6:                  >(
+7:                    id(name=z, scope=L);
+7:                    id(name=y, scope=G);
+6:                  )
+5:                )
+5:                >(
+6:                  id(name=y, scope=G);
+6:                  id(name=x, scope=G);
+5:                )
+4:              )
+4:              ==(
+5:                id(name=z, scope=L);
+5:                id(name=x, scope=G);
+4:              )
+3:            )
+3:            ==(
+4:              id(name=x, scope=G);
+4:              id(name=y, scope=G);
+3:            )
+2:          )
+1:        then:
+2:          ASSG:
+2:            Lhs:
+3:              id(name=z, scope=L);
+2:            Rhs:
+3:              intcon(1);
+1:        else:
+2:          -null-
+1:      ENDIF
+1:      IF
+2:          !(
+3:            !(
+4:              !(
+5:                !(
+6:                  !(
+7:                    !(
+8:                      !(
+9:                        !(
+10:                          !(
+11:                            !(
+12:                              &&(
+13:                                ||(
+14:                                  &&(
+15:                                    ||(
+16:                                      &&(
+17:                                        >(
+18:                                          id(name=x, scope=G);
+18:                                          id(name=y, scope=G);
+17:                                        )
+17:                                        >(
+18:                                          id(name=y, scope=G);
+18:                                          id(name=z, scope=L);
+17:                                        )
+16:                                      )
+16:                                      >(
+17:                                        id(name=z, scope=L);
+17:                                        id(name=y, scope=G);
+16:                                      )
+15:                                    )
+15:                                    >(
+16:                                      id(name=y, scope=G);
+16:                                      id(name=x, scope=G);
+15:                                    )
+14:                                  )
+14:                                  ==(
+15:                                    id(name=z, scope=L);
+15:                                    id(name=x, scope=G);
+14:                                  )
+13:                                )
+13:                                ==(
+14:                                  id(name=x, scope=G);
+14:                                  id(name=y, scope=G);
+13:                                )
+12:                              )
+11:                            )
+10:                          )
+9:                        )
+8:                      )
+7:                    )
+6:                  )
+5:                )
+4:              )
+3:            )
+2:          )
+1:        then:
+2:          RETURN:
+3:            id(name=z, scope=L);
+1:        else:
+2:          -null-
+1:      ENDIF
+1:      IF
+2:          !(
+3:            ||(
+4:              ||(
+5:                &&(
+6:                  >(
+7:                    CALL: callee=foo
+7:                      args:
+8:                        {
+9:                          id(name=x, scope=G);
+8:                        }
+7:                    CALL: callee=foo
+7:                      args:
+8:                        {
+9:                          id(name=y, scope=G);
+8:                        }
+6:                  )
+6:                  >(
+7:                    CALL: callee=foo
+7:                      args:
+8:                        {
+9:                          id(name=z, scope=L);
+8:                        }
+7:                    CALL: callee=foo
+7:                      args:
+8:                        {
+9:                          id(name=x, scope=G);
+8:                        }
+6:                  )
+5:                )
+5:                ==(
+6:                  CALL: callee=foo
+6:                    args:
+7:                      {
+8:                        CALL: callee=foo
+8:                          args:
+9:                            {
+10:                              CALL: callee=foo
+10:                                args:
+11:                                  {
+12:                                    id(name=x, scope=G);
+11:                                  }
+9:                            }
+7:                      }
+6:                  CALL: callee=foo
+6:                    args:
+7:                      {
+8:                        CALL: callee=foo
+8:                          args:
+9:                            {
+10:                              CALL: callee=foo
+10:                                args:
+11:                                  {
+12:                                    CALL: callee=foo
+12:                                      args:
+13:                                        {
+14:                                          id(name=y, scope=G);
+13:                                        }
+11:                                  }
+9:                            }
+7:                      }
+5:                )
+4:              )
+4:              !=(
+5:                CALL: callee=foo
+5:                  args:
+6:                    {
+7:                      CALL: callee=foo
+7:                        args:
+8:                          {
+9:                            id(name=z, scope=L);
+8:                          }
+6:                    }
+5:                CALL: callee=foo
+5:                  args:
+6:                    {
+7:                      CALL: callee=foo
+7:                        args:
+8:                          {
+9:                            CALL: callee=foo
+9:                              args:
+10:                                {
+11:                                  id(name=x, scope=G);
+10:                                }
+8:                          }
+6:                    }
+4:              )
+3:            )
+2:          )
+1:        then:
+2:          RETURN:
+3:            id(name=x, scope=G);
+1:        else:
+2:          -null-
+1:      ENDIF
+1:      RETURN:
+2:        -null-
+0:    }
+-----

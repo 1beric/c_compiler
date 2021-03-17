@@ -1,0 +1,31 @@
+@@FUN: foo
+@@BODY:
+0:    {
+1:      ASSG:
+1:        Lhs:
+2:          id(name=loc1, scope=L);
+1:        Rhs:
+2:          +(
+3:            id(name=glob1, scope=G);
+3:            id(name=glob2, scope=G);
+2:          )
+1:      ASSG:
+1:        Lhs:
+2:          id(name=loc2, scope=L);
+1:        Rhs:
+2:          +(
+3:            id(name=loc1, scope=L);
+3:            intcon(1);
+2:          )
+1:      ASSG:
+1:        Lhs:
+2:          id(name=glob2, scope=G);
+1:        Rhs:
+2:          *(
+3:            id(name=loc2, scope=L);
+3:            id(name=glob1, scope=G);
+2:          )
+1:      RETURN:
+2:        -null-
+0:    }
+-----
